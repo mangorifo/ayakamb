@@ -18,17 +18,10 @@ client.once(Events.ClientReady, () => {
   console.log('Client is: ready');;
   console.log(`Logging in...`)
   console.log(`Logged in as ${client.user.tag}!`)
-  client.user.setPresence({
-    activities: [
-      {
-        name: "you~",
-        type: ActivityType.Listening,
-      },
-    ],
-  });
+  
 })
 
-// stop fking Gay UWUWHSZHJDJX Hi havw skill issue 
+
 client.on(Events.InteractionCreate, async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
@@ -43,5 +36,19 @@ client.on(Events.InteractionCreate, async interaction => {
     await interaction.reply({ content: 'Sorry, the bot has encountered an error...', ephemeral: true });
   }
 })
+// events handler
+const eventsPath = path.join(__dirname, "events");
+const eventFiles = fs
+  .readdirSync(eventsPath)
+  .filter((file) => file.endsWith(".js"));
 
+for (const file of eventFiles) {
+  const filePath = path.join(eventsPath, file);
+  const event = require(filePath);
+  if (event.once) {
+    client.once(event.name, (...args) => event.execute(...args));
+  } else {
+    client.on(event.name, (...args) => event.execute(...args));
+  }
+}
 client.login(process.env.token);
