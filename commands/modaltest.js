@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { ModalBuilder } = require('discord.js')
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('modal')
