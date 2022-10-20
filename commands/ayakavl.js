@@ -49,12 +49,23 @@ const vl = [
       `I feel more competent now than ever before. I even have the time outside my work for the Yashiro Commission to try some new things. Would you like to try one of my home-made snacks? I just learned how to make them recently.`,
       `"Though I cling to that which has given me the strength to hold on, the weight of letting go is ever-foreboding."
       My apologies, it should be a happy occasion, and yet it is such a sad phrase that comes to mind. Our time together has been so pleasant that I am fearful of losing what I have gained. I'm sorry, I must compose myself.`,
-
+      `Take flight.`,
+      `My apologies.`,
+      `Whirling snow.`,
+      `Embrace the ice.`,
+      `Sakura swirl.`,
+      `Kamisato Art: Soumetsu!`,
+      `Master of Inazuma Kamisato Art Tachi Jutsu -- Kamisato Ayaka, present!\nDelighted to make your acquaintance.`,
+      `A pleasure to be working with you.`,
+      `I await your instruction.`,
+      `I shall treasure this good fortune.`,
+      `Hehe... Today is a lucky day.`,
+      `Collecting rare and exquisite treasures... Yes, this seems suitably sophisticated.`,
     ];
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ayakavoiceline')
-		.setDescription('Sends a random voiceline of Ayaka from Genshin Impact'),
+		.setDescription(`Sends a random voiceline of Ayaka from Genshin Impact. (this command's output is written manually)`),
 	async execute(interaction) {
     const voiceline = vl[Math.floor(Math.random() * vl.length)];
 		return interaction.reply(voiceline);
