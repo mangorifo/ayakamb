@@ -1,7 +1,7 @@
 const { REST, Routes } = require('discord.js');
 const { clientId, guildId, token } = require('./config.json');
 const fs = require('node:fs');
-// Use "node newCommandImplement" to implement new commands to all servers
+// Use "node newCommandImplement" to implement new commands to all servers (in the shell)
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -17,7 +17,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 // and deploy your commands!
 (async () => {
 	try {
-		console.log(`Started refreshing ${commands.length} application (/) commands.`);
+		console.log(`Started refreshing ${commands.length} slash commands.`);
 
 		// The put method is used to fully refresh all commands in the guild with the current set
 		await rest.put(
@@ -25,7 +25,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 	{ body: commands },
 );
 
-		console.log(`Successfully reloaded ${commands.length} application (/) commands.`);
+		console.log(`Successfully implemented ${commands.length} slash commands to all servers.`);
 	} catch (error) {
 		// And of course, make sure you catch and log any errors!
 		console.error(error);
