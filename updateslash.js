@@ -2,7 +2,7 @@ const { REST, Routes } = require('discord.js');
 const { clientId, guildId } = require('./config.json');
 const { token } = process.env.token
 const fs = require('node:fs');
-// Use "node notsrNewCmd" to implement new commands to all servers (in the shell)
+// Use "node updateslash" to implement new commands to all servers (in the shell)
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
