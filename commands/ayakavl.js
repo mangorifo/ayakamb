@@ -47,8 +47,7 @@ const vl = [
       `Feelings About Ascension: Intro\n*Ascension Phase 1\n\nThank you very much. It has been richly rewarding to learn from you so far, and I believe my skills with the blade can go even further still.`,
       `Feelings About Ascension: Building Up\n*Ascension Phase 2*\n\nThank you for your guidance. With your assistance, I am gaining a more thorough understanding of my capabilities.`,
       `Feelings About Ascension: Climax\n*Ascension Phase 3*\n\nI feel more competent now than ever before. I even have the time outside my work for the Yashiro Commission to try some new things. Would you like to try one of my home-made snacks? I just learned how to make them recently.`,
-      `Feelings About Ascension: Conclusion\n*Ascension Phase 6*\n\n"Though I cling to that which has given me the strength to hold on, the weight of letting go is ever-foreboding."
-      My apologies, it should be a happy occasion, and yet it is such a sad phrase that comes to mind. Our time together has been so pleasant that I am fearful of losing what I have gained. I'm sorry, I must compose myself.`,
+      `Feelings About Ascension: Conclusion\n*Ascension Phase 6*\n\n"Though I cling to that which has given me the strength to hold on, the weight of letting go is ever-foreboding." My apologies, it should be a happy occasion, and yet it is such a sad phrase that comes to mind. Our time together has been so pleasant that I am fearful of losing what I have gained. I'm sorry, I must compose myself.`,
       `Elemental Skill: I\n\nTake flight.`,
       `Elemental Skill: II\n\nMy apologies.`,
       `Elemental Skill: III\n\nWhirling snow.`,
