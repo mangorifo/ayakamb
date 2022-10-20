@@ -10,6 +10,9 @@ const sus = [
   "https://tenor.com/view/sus-omgsooosus-gif-25629538",
   "https://tenor.com/view/the-rock-sus-the-rock-meme-the-rock-sus-meme-gif-23972805",
   "https://tenor.com/view/sus-among-us-gif-22210217",
+  "https://tenor.com/view/sus-gif-20302681",
+  "https://tenor.com/view/amogus-among-us-meme-impostor-sus-gif-20948491",
+  "https://tenor.com/view/sus-omori-sussy-gif-gif-24107578",
 ]
 module.exports = {
 	data: new SlashCommandBuilder()

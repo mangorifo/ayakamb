@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('randip')
+		.setName('randomip')
 		.setDescription('random ip address'),
 	async execute(interaction) {
     const ip1 = [Math.floor(Math.random() * 255)];
