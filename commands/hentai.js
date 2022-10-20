@@ -9,7 +9,11 @@ module.exports = {
   async execute(interaction) {
     if (interaction.channel.nsfw) {
             return interaction.reply(await hmtai.nsfw.hentai());
-        } else return interaction.reply("this command only works on nsfw channels");
+        } else 
+      return interaction.reply({
+        content: `this command only works on nsfw channels`,
+        ephemeral: true,
+      })
        console.log(`User ${interaction.user.username} has used the hentai command in "${interaction.guild.name}"`)
   },
 };
