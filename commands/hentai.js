@@ -12,7 +12,7 @@ module.exports = {
             return interaction.reply(await hmtai.nsfw.hentai());
         } else 
       return interaction.reply({
-        content: `this command only works on nsfw channels`,
+        content: `this command only works on nsfw channels ("age-restricted channel)"`,
         ephemeral: true,
       }); 
   },
