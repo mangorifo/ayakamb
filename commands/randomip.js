@@ -5,6 +5,7 @@ module.exports = {
 		.setName('randomip')
 		.setDescription('random ip address'),
 	async execute(interaction) {
+    console.log(`User ${interaction.member.user.tag} has used the randomip command in "${interaction.guild.name}"`)
     const ip1 = [Math.floor(Math.random() * 255)];
     const ip2 = [Math.floor(Math.random() * 255)];
     const ip3 = [Math.floor(Math.random() * 255)];

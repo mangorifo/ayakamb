@@ -20,6 +20,7 @@ module.exports = {
 		.setName('deadchat')
 		.setDescription('sends a random "dead chat" gif so that you dont have to find one'),
 	async execute(interaction) {
+    console.log(`User ${interaction.member.user.tag} has used the dedchat command in "${interaction.guild.name}"`)
     const deadchat = ded[Math.floor(Math.random() * ded.length)];
 		return interaction.reply(deadchat);
 	},

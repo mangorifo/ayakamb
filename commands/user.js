@@ -5,6 +5,7 @@ module.exports = {
 		.setName('user')
 		.setDescription('Provides information about you.'),
 	async execute(interaction) {
+    console.log(`User ${interaction.member.user.tag} has used the user command in "${interaction.guild.name}"`)
 		// interaction.user is the object representing the User who ran the command
 		// interaction.member is the GuildMember object, which represents the user in the specific guild
 		await interaction.reply(`Username: ${interaction.user.username}, joined on ${interaction.member.joinedAt}.`);

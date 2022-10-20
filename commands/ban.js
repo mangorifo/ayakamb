@@ -17,6 +17,7 @@ module.exports = {
     )
     .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers),
   async execute(interaction) {
+    console.log(`User ${interaction.member.user.tag} has used the ban command in "${interaction.guild.name}"`)
     const user = interaction.options.getMember("user");
     const reason = interaction.options.getString("reason");
 

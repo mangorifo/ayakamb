@@ -1,10 +1,16 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-
+const { SlashCommandBuilder } = require('discord.js');
+const { EmbedBuilder } = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('help')
         .setDescription('help!'),
     async execute(interaction) {
-    return interaction.reply(`**help** for Ayaka-MB (hb, soon :skull:)\nhentai: sends hentai :skull:\nhowgay: how gay are you?\nping: sends bot's ping\navatar: sends URL of a member's avatar (or yours)\nsus: sends a sus gif\nrandip: random ip address\ndeadchat: dead chat gif\n\n**MODERATION**\nban: bans a member\ntimeout: times out a member\nunban: unbans a member\nkick: kicks a member\n\nYes, sadly the music commands are gone`);
+      console.log(`User ${interaction.member.user.tag} has used the help command in "${interaction.guild.name}"`)
+    const messageEmbed = new EmbedBuilder()
+	.setColor(`blue`)
+	.setTitle(`All commands`)
+	.setAuthor({ name: 'help command'})
+	.setDescription(`/avatar: sends an avatar url of your avatar or the specified user\n/ayakavoiceline: sends a random voiceline from Ayaka from the game "Genshin Impact"\n/ban: bans a user\n/deadchat: sends a "dead chat" gif\n/help: shows this embed\n/hentai: you know what this command does...\n/howgay: makes the bot guess how gay you are\n/howsus: makes the bot guess how sus you are\n/kick: kicks a user\n/ping: checks the bot latency\n/randomip: sends a random IP address\n/server: sends information about the server\n/sus: sends a "sus" gif\n/timeout: times out a user\n/unban: unbans a user\n/user: sends info about you`)
+		return interaction.reply({ embeds: [messageEmbed] });
     },
 };
