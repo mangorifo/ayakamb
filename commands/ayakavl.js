@@ -64,7 +64,7 @@ const vl = [
       `Opening Treasure Chest: II\n\nHehe... Today is a lucky day.`,
       `Opening Treasure Chest: I\n\nCollecting rare and exquisite treasures... Yes, this seems suitably sophisticated.`,
       `Heavy Hit Taken: II\n\nUnthinkable...`,
-      `Heavy Hit Taken: I\n\mSo rude!`,
+      `Heavy Hit Taken: I\n\nSo rude!`,
       `Fallen: III\n\nI have dishonored... our clan...`,
       `Fallen: II\n\nMuch remains... unfinished...`,
       `Fallen: I\n\nPardon my indiscretion...`,
