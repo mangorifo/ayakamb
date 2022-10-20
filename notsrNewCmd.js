@@ -1,5 +1,6 @@
 const { REST, Routes } = require('discord.js');
-const { clientId, guildId, token } = require('./config.json');
+const { clientId, guildId } = require('./config.json');
+const { token } = process.env.token
 const fs = require('node:fs');
 // Use "node notsrNewCmd" to implement new commands to all servers (in the shell)
 const commands = [];
