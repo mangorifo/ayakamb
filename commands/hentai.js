@@ -7,6 +7,8 @@ module.exports = {
     .setName("hentai")
     .setDescription("Sends a hentai photo"),
   async execute(interaction) {
-    return interaction.reply(await hmtai.nsfw.hentai());
+    if (interaction.channel.nsfw) {
+            return interaction.reply(await hmtai.nsfw.hentai());
+        } else return interaction.reply("this command only works on nsfw channels");
   },
-}
+};
