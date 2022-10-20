@@ -13,7 +13,7 @@ module.exports = {
       { name: `you~ | I only wish life could be as leisurely as this a little more often… How greedy of me.`, type: ActivityType.Listening},
       { name: `you~ | So this is a day in the life of the Traveler… Hehe, I’m learning more about you all the time.`, type: ActivityType.Listening},
     ];
-    let i = 0;
+    let i = 5;
     setInterval(() => {
       client.user.setPresence({
         activities: [
@@ -29,3 +29,4 @@ module.exports = {
     }, 7000);
   },
 };
+console.log('Statuses have been loaded.')
