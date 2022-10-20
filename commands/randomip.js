@@ -10,7 +10,7 @@ module.exports = {
     const ip3 = [Math.floor(Math.random() * 255)];
     const ip4 = [Math.floor(Math.random() * 255)];
 	const messageEmbed = new EmbedBuilder()
-	.setColor(`GREEN`)
+	.setColor(`00FF00`)
 	.setTitle('Generated IP Address')
 	.setURL(`https://whatismyipaddress.com/ip/${ip1}.${ip2}.${ip3}.${ip4}`)
 	.setAuthor({ name: 'Random IP Address'})
