@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { ModalBuilder } = require('discord.js')
+const { ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('modal')
