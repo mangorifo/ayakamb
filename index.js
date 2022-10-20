@@ -15,7 +15,8 @@ for (const file of commandFiles) {
 }
 
 client.once(Events.ClientReady, () => {
-  console.log('Ready!');;
+  console.log('Client is: ready');;
+  console.log(`Logging in...`)
   console.log(`Logged in as ${client.user.tag}!`)
   client.user.setPresence({
     activities: [
