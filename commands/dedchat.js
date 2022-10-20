@@ -12,6 +12,8 @@ const ded = [
   "https://tenor.com/view/dead-chat-dead-chat-dead-chat-xdxdxd-xdxdxd-gif-23903924",
   "https://tenor.com/view/dead-chat-toyota-4runner-ded-chat-xd-dead-chat-xd-gif-26294289",
   "https://tenor.com/view/dead-chat-gif-21393460",
+  "https://tenor.com/view/meme-dead-chat-alive-chat-discord-meme-gif-22432215",
+  "https://tenor.com/view/xqc-dies-chat-dead-gif-25041263",
 ]
 module.exports = {
 	data: new SlashCommandBuilder()
