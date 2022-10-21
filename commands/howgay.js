@@ -7,6 +7,7 @@ module.exports = {
       option.setName("user").setDescription("if u wanna find out if the mentioned user is gay").setRequired(false)
     ),
 	async execute(interaction) {
+    const user = interaction.options.getMember("user");
 		if (!user)
       return interaction.reply({
         content: "that is not a user",
@@ -16,6 +17,6 @@ module.exports = {
 		
 		console.log('[LOG] | "howgay.js" was used')
     const gay = [Math.floor(Math.random() * 101)];
-		return interaction.reply(`you are: ${gay}% gay <a:senti:1031904003866509382>`);
+		return interaction.reply(`${user} is ${gay}% gay <a:senti:1031904003866509382>`);
 	},
 };
