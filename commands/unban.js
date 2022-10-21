@@ -50,7 +50,7 @@ module.exports = {
       if (pchannel) await pchannel.send({ embeds: [embed] });
       return interaction.reply({
         content: `${user} has been unbanned.`,
-        ephemeral: true,
+        ephemeral: false,
       });
     } catch (error) {
       console.log(error);

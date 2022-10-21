@@ -88,7 +88,7 @@ module.exports = {
         if (pchannel) await pchannel.send({ embeds: [embed] });
         return interaction.reply({
           content: `${user.user} has been kicked.`,
-          ephemeral: true,
+          ephemeral: false,
         });
       } catch (error) {
         console.log(error);

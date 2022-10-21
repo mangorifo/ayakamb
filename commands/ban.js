@@ -87,7 +87,7 @@ module.exports = {
         if (pchannel) await pchannel.send({ embeds: [embed] });
         return interaction.reply({
           content: `${user.user.tag} has been banned.`,
-          ephemeral: true,
+          ephemeral: false,
         });
       } catch (error) {
         console.log(error);
