@@ -75,7 +75,7 @@ const vl = [
 	`**Fallen: III**\n\nArgh...`,
 	`**Heavy Hit Taken: I**\n\nQuit it!`,
 	`**Joining Party: I**\n\nOh? Is it time for me to join you?`,
-	`**Joining Party: II**\n\nGood eye!`
+	`**Joining Party: II**\n\nGood eye!`,
 	`**Joining Party: III**\n\nSend one, send 'em all!`,
 	`**Idle: I**\n\n♪Silly-churl, billy-churl, silly-billy hilichurl... Woooh~`,
 	`**Idle: II**\n\nAh? ... *chuckles* Toodle-oo!`,
