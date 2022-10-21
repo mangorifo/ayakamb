@@ -4,7 +4,7 @@ module.exports = {
 		.setName('howgay')
 		.setDescription('how gay are you???')
 		.addUserOption((option) =>
-      option.setName("user").setDescription("if u wanna find out if the mentioned user is gay").setRequired(false)
+      option.setName("user").setDescription("if u wanna find out if the selected user is gay").setRequired(false)
     ),
 	async execute(interaction) {
     const user = interaction.options.getMember("user");
