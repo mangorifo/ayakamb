@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const vl = [
-	`**Hello*\n\nYoh, now just why might you be looking for me, hm? Oh, you didn't know? I'm the 77th Director of the Wangsheng Funeral Parlor, Hu Tao. Though by the looks of you... Radiant glow, healthy posture... Yes, you're definitely here for something other than that which falls within my regular line of work, aren't you?`,
+	`**Hello**\n\nYoh, now just why might you be looking for me, hm? Oh, you didn't know? I'm the 77th Director of the Wangsheng Funeral Parlor, Hu Tao. Though by the looks of you... Radiant glow, healthy posture... Yes, you're definitely here for something other than that which falls within my regular line of work, aren't you?`,
 	`**Chat: Wangsheng Funeral Parlor**\n\nWanna come over for tea?`,
 	`**Chat: Customers**\n\nOne client, two clients, three clients!`,
 	`**Chat: Taking a Break**\n\nWhen the sun's out, bathe in sunlight. But when the moon's out, bathe in moonlight~`,
@@ -85,7 +85,7 @@ module.exports = {
 		.setName('hutaovoiceline')
 		.setDescription('Sends a random voiceline of Hu Tao from "Genshin Impact"'),
 	async execute(interaction) {
-    console.log(`User ${interaction.member.user.tag} has used the sus command in "${interaction.guild.name}"`)
+    console.log(`User ${interaction.member.user.tag} has used the hutaovl command in "${interaction.guild.name}"`)
     const voiceline = vl[Math.floor(Math.random() * vl.length)];
 		return interaction.reply(voiceline);
 	},
