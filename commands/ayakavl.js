@@ -74,7 +74,7 @@ module.exports = {
 		.setName('ayakavoiceline')
 		.setDescription(`Sends a random voiceline of Ayaka from Genshin Impact. (this command's output is written manually)`),
 	async execute(interaction) {
-    console.log(`User ${interaction.member.user.tag} has used the ayakavl command in "${interaction.guild.name}"`)
+    console.log('[LOG] | "ayakavl.js" was used')
     const voiceline = vl[Math.floor(Math.random() * vl.length)];
 		return interaction.reply(voiceline);
 	},

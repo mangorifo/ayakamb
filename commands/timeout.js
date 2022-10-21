@@ -26,7 +26,7 @@ module.exports = {
     )
     .setDefaultMemberPermissions(PermissionFlagsBits.ModerateMembers),
   async execute(interaction) {
-    console.log(`User ${interaction.member.user.tag} has used the timeout command in "${interaction.guild.name}"`)
+    console.log('[LOG] | "timeout.js" was used')
     const user = interaction.options.getMember("user");
     const reason = interaction.options.getString("reason");
 

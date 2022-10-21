@@ -85,7 +85,7 @@ module.exports = {
 		.setName('hutaovoiceline')
 		.setDescription('Sends a random voiceline of Hu Tao from "Genshin Impact"'),
 	async execute(interaction) {
-    console.log(`User ${interaction.member.user.tag} has used the hutaovl command in "${interaction.guild.name}"`)
+		console.log('[LOG] | "hutaovl.js" was used')
     const voiceline = vl[Math.floor(Math.random() * vl.length)];
 		return interaction.reply(voiceline);
 	},

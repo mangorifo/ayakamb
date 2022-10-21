@@ -20,7 +20,7 @@ module.exports = {
 		.setName('sus')
 		.setDescription('sus'),
 	async execute(interaction) {
-    console.log(`User ${interaction.member.user.tag} has used the sus command in "${interaction.guild.name}"`)
+    console.log('[LOG] | "sus.js" was used')
     const sussygif = sus[Math.floor(Math.random() * sus.length)];
 		return interaction.reply(sussygif);
 	},

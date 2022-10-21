@@ -5,7 +5,7 @@ module.exports = {
         .setName('help')
         .setDescription('help!'),
     async execute(interaction) {
-      console.log(`User ${interaction.member.user.tag} has used the help command in "${interaction.guild.name}"`)
+      console.log('[LOG] | "help.js" was used')
     const messageEmbed = new EmbedBuilder()
 	.setColor(`blue`)
 	.setTitle(`All commands`)
