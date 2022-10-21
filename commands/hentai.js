@@ -7,7 +7,7 @@ module.exports = {
     .setName("hentai")
     .setDescription("Sends a hentai photo"),
   async execute(interaction) {
-    console.log('[LOG] | "hentai.js" was used')
+    console.log(`[LOG] | "hentai.js" was used by ${interaction.user.tag} in ${interaction.guild.name}`)
     if (interaction.channel.nsfw) {
             return interaction.reply(await hmtai.nsfw.hentai());
         } else 
