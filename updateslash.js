@@ -18,7 +18,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 // and deploy your commands!
 (async () => {
 	try {
-		console.log(`Started refreshing ${commands.length} slash commands.`);
+		console.log(`[LOGS] updateslash.js | Starting to refresh slash commands...`);
 
 		// The put method is used to fully refresh all commands in the guild with the current set
 		await rest.put(
@@ -26,7 +26,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 	{ body: commands },
 );
 
-		console.log(`Successfully implemented ${commands.length} slash commands to all servers.`);
+		console.log(`[LOGS] updateslash.js | Added new/updated slash commands in all servers/dms.`);
 	} catch (error) {
 		// And of course, make sure you catch and log any errors!
 		console.error(error);

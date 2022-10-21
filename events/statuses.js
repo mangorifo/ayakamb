@@ -42,4 +42,4 @@ module.exports = {
     }, 7000);
   },
 };
-console.log('Statuses have been loaded.')
+console.log('[EVENTS] "statuses.js" - loaded')

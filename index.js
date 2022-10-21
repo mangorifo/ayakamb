@@ -15,9 +15,9 @@ for (const file of commandFiles) {
 }
 
 client.once(Events.ClientReady, () => {
-  console.log('Client is: ready');;
-  console.log(`Logging in...`)
-  console.log(`Logged in as ${client.user.tag}!`)
+  console.log('...');;
+  console.log(`[CLIENT] index.js | Logging in...`)
+  console.log(`[CLIENT] index.js | Logged in as ${client.user.tag}!`)
   
 })
 
