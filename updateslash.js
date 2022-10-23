@@ -1,8 +1,7 @@
 const { REST, Routes } = require('discord.js');
-const { clientId, guildId } = require('./config.json');
-const { token } = require('./config.json')
+const { clientId, guildId, token } = require('./config.json');
 const fs = require('node:fs');
-// Use "node updateslash" to implement new commands to all servers (in the shell)
+
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -15,10 +14,11 @@ for (const file of commandFiles) {
 
 // Construct and prepare an instance of the REST module
 const rest = new REST({ version: '10' }).setToken(token);
+
 // and deploy your commands!
 (async () => {
 	try {
-		console.log(`[LOGS] updateslash.js | Starting to refresh slash commands...`);
+		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
 		// The put method is used to fully refresh all commands in the guild with the current set
 		await rest.put(
@@ -26,7 +26,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 	{ body: commands },
 );
 
-		console.log(`[LOGS] updateslash.js | Added new/updated slash commands in all servers/dms.`);
+		console.log(`Successfully reloaded ${commands.length} application (/) commands.`);
 	} catch (error) {
 		// And of course, make sure you catch and log any errors!
 		console.error(error);
