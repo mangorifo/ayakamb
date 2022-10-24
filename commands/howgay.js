@@ -11,11 +11,11 @@ module.exports = {
     const user = interaction.options.getMember("user");
     const gay = [Math.floor(Math.random() * 101)];
     const gay1 = new EmbedBuilder()
-	.setColor(`00FF00`)
+	.setColor(`e4b400`)
 	.setTitle(`how gay command`)
 	.setDescription(`<@${interaction.user.id}> is ${gay}% gay <a:senti:1031904003866509382>`)
     const gay2 = new EmbedBuilder()
-	.setColor(`00FF00`)
+	.setColor(`e4b400`)
 	.setTitle(`how gay command`)
 	.setDescription(`${user} is ${gay}% gay <a:senti:1031904003866509382>`)
     console.log('[LOG] | "howgay.js" was used')

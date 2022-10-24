@@ -6,23 +6,19 @@ module.exports = {
   execute(client) {
     const activities = [
       { name: `you.`, type: ActivityType.Watching},
-      { name: '😱', type: ActivityType.Competing},
-      { name: 'you', type: ActivityType.Listening}
+      { name: `😱`, type: ActivityType.Listening},
+      { name: `you`, type: ActivityType.Listening},
+      { name: `text`, type: ActivityType.Watching},
     ];
-    let i = 10;
-    setInterval(() => {
       client.user.setPresence({
         activities: [
           {
-            name: activities[i].name,
-            type: activities[i].type,
-            url: activities[i].url,
+            name: `😱`,
+            type: `LISTENING`,
           },
         ],
         status: "idle",
       });
-      i = ++i % activities.length;
-    }, 7000);
   },
 };
 console.log('[EVENTS] "statuses.js" - loaded statuses event')

@@ -11,11 +11,11 @@ module.exports = {
     const user = interaction.options.getMember("user");
     const emoc = [Math.floor(Math.random() * 101)];
     const emo1 = new EmbedBuilder()
-	.setColor(`00FF00`)
+	.setColor(`e4b400`)
 	.setTitle(`how emo command`)
 	.setDescription(`<@${interaction.user.id}> is ${emoc}% emo <a:senti:1031904003866509382>`)
     const emo2 = new EmbedBuilder()
-	.setColor(`00FF00`)
+	.setColor(`e4b400`)
 	.setTitle(`how emo command`)
 	.setDescription(`${user} is ${emoc}% emo <a:senti:1031904003866509382>`)
     console.log('[LOG] | "howemo.js" was used')

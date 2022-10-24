@@ -6,11 +6,10 @@ module.exports = {
         .setDescription('View latest bot update'),
     async execute(interaction) {
       const messageEmbed = new EmbedBuilder()
-	.setColor(`blue`)
+	.setColor(`00FF00`)
 	.setTitle(`Changelog`)
 	.setAuthor({ name: 'latest update of AyakaMBot'})
-	.setDescription(`*New commands*\n/latestupd: shows bot's latest update\n\n/howemo: :skull:`)
-        console.log('[LOG] | "latestupd.js" was used')
+	.setDescription(`*update commands*\n\nupdated the hentai command`)
         return interaction.reply({ embeds: [messageEmbed] });
     },
 };

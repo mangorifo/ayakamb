@@ -11,11 +11,11 @@ module.exports = {
     const hs = [Math.floor(Math.random() * 101)];
     const user = interaction.options.getMember("user");
     const sus1 = new EmbedBuilder()
-	.setColor(`00FF00`)
+	.setColor(`e4b400`)
 	.setTitle(`how sus command`)
 	.setDescription(`<@${interaction.user.id}> is ${hs}% sus <a:senti:1031904003866509382>`)
     const sus2 = new EmbedBuilder()
-	.setColor(`00FF00`)
+	.setColor(`e4b400`)
 	.setTitle(`how sus command`)
 	.setDescription(`${user} is ${hs}% suS <a:senti:1031904003866509382>`)
 		if (!user)
