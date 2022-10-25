@@ -11,7 +11,7 @@ module.exports = {
     const user = interaction.options.getMember("user");
     const hugmsg = [
       `<@${interaction.user.id}> hugs ${user} and ${user} hugs them back.`,
-      `<@${interaction.user.id}> tried to hug ${user}, but ${user} didn't want to hug them...`,
+
       `<@${interaction.user.id}> hugs ${user}.`,
       `<@${interaction.user.id}> hugs ${user}, and ${user} tells <@${interaction.user.id}> to take a shower`,
       `<@${interaction.user.id}> hugs ${user} and they become best friends!`,
