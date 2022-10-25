@@ -1,3 +1,5 @@
+// this command updates all slash commands in all servers/dms or adds them to the slash command list
+
 const { REST, Routes } = require('discord.js');
 const { clientId, guildId, token } = require('./config.json');
 const fs = require('node:fs');
