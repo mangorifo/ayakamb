@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require("discord.js");
-
+const { EmbedBuilder } = require('discord.js')
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("hug")
@@ -19,14 +19,18 @@ module.exports = {
       `${user} hugs <@${interaction.user.id}> before <@${interaction.user.id}> hugged them. ❤️`,
       ]
     const huggif = [
-    "https://tenor.com/view/enage-kiss-anime-hug-kisara-gif-26118528",
-     "https://tenor.com/view/hug-gif-25588769",
-    "https://tenor.com/view/aharensan-aharen-anime-hug-anime-hug-gif-25343437",
-    "https://tenor.com/view/anime-gif-26077129",
+    "https://media.tenor.com/J7eGDvGeP9IAAAAC/enage-kiss-anime-hug.gif",
+"https://media.tenor.com/kCZjTqCKiggAAAAC/hug.gif",  "https://media.tenor.com/8o4fWGwBY1EAAAAd/aharensan-aharen.gif",   "https://media.tenor.com/8BqG6yTLCLEAAAAC/anime.gif",
       ]
       
     const hgm2 = hugmsg[Math.floor(Math.random() * hugmsg.length)];
-    interaction.reply(hgm2)
-    return interaction.reply(huggif);
+    const hgifoutput = huggif[Math.floor(Math.random() * huggif.length)];
+    const exampleEmbed = new EmbedBuilder()
+	.setColor(0x0099FF)
+	.setTitle('huggy')
+	.setDescription(hgm2)
+	.setImage(hgifoutput)
+
+interaction.reply({ embeds: [exampleEmbed] });
   },
 };
