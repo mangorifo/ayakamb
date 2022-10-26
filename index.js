@@ -2,6 +2,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const express = require('express');
+const server = express();
+ 
+var http = require('http'); http.createServer(function (req, res) { res.write("Awake."); res.end(); }).listen(8080);
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, '/commands');
