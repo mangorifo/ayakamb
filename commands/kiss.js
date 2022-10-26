@@ -10,8 +10,7 @@ module.exports = {
   async execute(interaction) {
     const user = interaction.options.getMember("user");
     const kismsg = [
-      `<@${interaction.user.id}> kisses ${user} and ${user} slaps <@${interaction.user.id}>`,
-      `<@${interaction.user.id}> tried to kiss ${user}...`,
+      `<@${interaction.user.id}> tried to kiss ${user}...\n\nand they succeded`,
       `<@${interaction.user.id}> kisses ${user}.`,
       `<@${interaction.user.id}> kissed ${user} and ${user} started to have a crush on the-`,
       `gay.`,
