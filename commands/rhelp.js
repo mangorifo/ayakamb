@@ -42,8 +42,8 @@ module.exports = {
         return interaction.reply({ embeds: [htmdbEmbed], ephemeral: false })
       }
       if (interaction.options.getString('search') == 'httpm') {
-        return interaction.reply({ embeds: [httpmbed], ephemeral: true })
-      }
+       return interaction.reply({ embeds: [httpmbed], ephemeral: false})
+     }
 
 		return interaction.reply('wat how');
     },
