@@ -11,7 +11,7 @@ module.exports = {
 			.addChoices(
         { name: 'What is localhost?', value: 'lchostsearch'},
          { name: 'How do I make a discord bot?', value: 'htmdb'},
-        { name: 'What is HTTP?', value: 'httpmbed'},
+        { name: 'What is HTTP?', value: 'httpm'},
 			)),
     async execute(interaction) {
      const src = interaction.options.getString('search');
