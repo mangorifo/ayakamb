@@ -28,7 +28,10 @@ module.exports = {
 	.setTitle(`How to make a discord bot`)
   .setURL('https://discordjs.guide')
 	.setAuthor({ name: 'rhelp'})
-	.setDescription(`can't explain how to make a discord bot here in one embed. go [here](https://discordjs.guide) for a guide of how.`)
+	.setDescription(`To use discord.js, you'll need to install it via npm (Node's package manager). npm comes with every Node installation, so you don't have to worry about installing that. However, before you install anything, you should set up a new project folder.\nNavigate to a suitable place on your machine and create a new folder named discord-bot (or whatever you want). Next you'll need to open your terminal.
+On Windows, either:\nShift + Right-click inside your project directory and choose the "Open command window here" option\nPress Win + R and run cmd.exe, and then cd into your project directory
+On macOS, either:\n\nOpen Launchpad or Spotlight and search for "Terminal"\nIn your "Applications" folder, under "Utilities", open the Terminal app
+On Linux, you can quickly open the terminal with Ctrl + Alt + T.\n\nWith the terminal open, run the node -v command to make sure you've successfully installed Node.js. If it outputs v16.9.0 or higher, great!\n\n**Installing discord.js**\nOn npm, type **npm install discord.js**.\nOn yarn, type **yarn add discord.js**.\nOn pnpm, type **pnpm add discord.js**.\n\nWhile you are coding, it's possible to run into numerous syntax errors or code in an inconsistent style. You should install a linter to ease these troubles. While code editors generally can point out syntax errors, linters coerce your code into a specific style as defined by the configuration. While this is not required, it is advised.\n\nContinue [here](https://discordjs.guide/preparations/setting-up-a-linter.html#installing-a-code-editor)`)
       const httpembed = new EmbedBuilder()
 	.setColor(`e4b400`)
 	.setTitle(`What is HTTP?`)

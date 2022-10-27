@@ -5,7 +5,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const express = require('express');
 const server = express();
  
-var http = require('http'); http.createServer(function (req, res) { res.write("Awake."); res.end(); }).listen(8080);
+var http = require('http'); http.createServer(function (req, res) { res.write("Awake."); res.end(); }).listen(8887);
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, '/commands');
