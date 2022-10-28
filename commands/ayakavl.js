@@ -1,7 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 const vl = [
      `**Joining Party: I**\n\nKamisato Ayaka, present.`,
-     `**Chat: Famous Sword*\n\nA blade embraces its duty, as a jeweler cherishes their gems.`,
+     `**Chat: Famous Sword**\n\nA blade embraces its duty, as a jeweler cherishes their gems.`,
      `**Chat: Sword**\n\nA blade is like a tea-leaf. Only those who sample it many times can appreciate its true qualities.`,
       `**Chat: Stability**\n\nI only wish life could be as leisurely as this a little more often… How greedy of me.`,
       `**Chat: Zoning Out**\n\nSo this is a day in the life of the Traveler… Hehe, I’m learning more about you all the time.`,

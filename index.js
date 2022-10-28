@@ -2,10 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-const express = require('express');
-const server = express();
- 
-var http = require('http'); http.createServer(function (req, res) { res.write("Awake."); res.end(); }).listen(8887);
+
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, '/commands');
@@ -17,7 +14,7 @@ for (const file of commandFiles) {
 }
 
 client.once(Events.ClientReady, () => {
-  console.log('...');;
+  console.log('[CLIENT] index.js | Client is ready.');
   console.log(`[CLIENT] index.js | Logging in...`)
   console.log(`[CLIENT] index.js | Logged in as ${client.user.tag}!`)
   
@@ -34,8 +31,9 @@ client.on(Events.InteractionCreate, async interaction => {
   try {
     await command.execute(interaction);
   } catch (error) {
+    console.log('[ERROR] index.js | The bot has encountered an error. The error will be listed below.');
     console.error(error);
-    await interaction.reply({ content: 'Sorry, the bot has encountered an error... (Bot has skill issues)', ephemeral: true });
+    await interaction.reply({ content: 'Sorry, the bot has encountered an error... (Bot may have crashed too)', ephemeral: true });
   }
 })
 // events handler
