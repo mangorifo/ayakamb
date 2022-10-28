@@ -31,7 +31,6 @@ client.on(Events.InteractionCreate, async interaction => {
   try {
     await command.execute(interaction);
   } catch (error) {
-    console.log('[ERROR] index.js | The bot has encountered an error. The error will be listed below.');
     console.error(error);
     await interaction.reply({ content: 'Sorry, the bot has encountered an error... (Bot may have crashed too)', ephemeral: true });
   }
