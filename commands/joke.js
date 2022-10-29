@@ -65,7 +65,7 @@ const njoke = [
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('joke')
-		.setDescription('haha verry funny')
+		.setDescription('sends a funny joke')
     .addStringOption(option =>
 		option.setName('joketype')
 			.setDescription('what kind of joke?')
