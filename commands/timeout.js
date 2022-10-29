@@ -37,7 +37,7 @@ module.exports = {
     if (!durationMatch) {
       return interaction.reply({
         content:
-          "Invalid duration format. Please use the format `1s` for 1 second, `1m` for 1 minute, `1h` for 1 hour, `1d` for 1 day, or `1w` for 1 week.",
+          "Invalid duration format. ex. 1s, 1m, 1h, 1d",
         ephemeral: true,
       });
     }
