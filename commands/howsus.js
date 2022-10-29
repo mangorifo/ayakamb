@@ -17,7 +17,7 @@ module.exports = {
     const sus2 = new EmbedBuilder()
 	.setColor(`e4b400`)
 	.setTitle(`how sus command`)
-	.setDescription(`${user} is ${hs}% suS <a:senti:1031904003866509382>`)
+	.setDescription(`${user} is ${hs}% sus <a:senti:1031904003866509382>`)
 		if (!user)
     return interaction.reply({ embeds: [sus1] })
 		const whois = interaction.options.getString("who");
