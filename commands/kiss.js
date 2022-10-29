@@ -14,7 +14,6 @@ module.exports = {
       `<@${interaction.user.id}> kisses ${user}.`,
       `<@${interaction.user.id}> kissed ${user} and ${user} started to have a crush on the-`,
       `<@${interaction.user.id}> kisses ${user} because yes`,
-      `gay.`,
   
       ]
     const hgm2 = kismsg[Math.floor(Math.random() * kismsg.length)];
