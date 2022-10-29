@@ -88,7 +88,7 @@ module.exports = {
         const pchannel = await interaction.guild.systemChannel;
         if (pchannel) await pchannel.send({ embeds: [embed] });
         return interaction.reply({
-          content: `${user.user} has been kicked.`,
+          content: `${user.user} has been kicked`,
           ephemeral: false,
         });
       } catch (error) {

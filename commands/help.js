@@ -13,7 +13,6 @@ module.exports = {
         { name: '/ayakavoiceline', value: 'tes18'},
 				{ name: '/ban', value: 'tes2' },
 				{ name: '/deadchat', value: 'tes3' },
-        { name: '/hentai', value: 'tes4' },
         { name: '/how commands', value: 'tes5'},
         { name: '/hug', value: 'tes6' },
         { name: '/hutaovoiceline', value: 'tes7'},
