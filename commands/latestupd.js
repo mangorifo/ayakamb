@@ -9,7 +9,7 @@ module.exports = {
 	.setColor(`00FF00`)
 	.setTitle(`Changelog`)
 	.setAuthor({ name: 'latest update of AyakaMBot'})
-	.setDescription(`*update commands*\n\nhug put in embed`)
+	.setDescription(`*update commands*\n\ndelete rhelp cuz useless fr`)
         return interaction.reply({ embeds: [messageEmbed] });
     },
 };

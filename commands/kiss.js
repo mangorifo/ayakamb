@@ -13,6 +13,7 @@ module.exports = {
       `<@${interaction.user.id}> tried to kiss ${user}...\n\nand they succeded`,
       `<@${interaction.user.id}> kisses ${user}.`,
       `<@${interaction.user.id}> kissed ${user} and ${user} started to have a crush on the-`,
+      `<@${interaction.user.id}> kisses ${user} because yes`,
       `gay.`,
   
       ]
