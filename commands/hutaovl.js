@@ -83,7 +83,7 @@ const vl = [
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('hutaovoiceline')
-		.setDescription('Sends a random voiceline of Hu Tao from "Genshin Impact"'),
+		.setDescription('Sends a random voiceline of Hu Tao from "Genshin Impact".'),
 	async execute(interaction) {
 		console.log('[LOG] | "hutaovl.js" was used')
     const voiceline = vl[Math.floor(Math.random() * vl.length)];
