@@ -28,7 +28,6 @@ module.exports = {
         { name: '/unban', value: 'tes16'},
         { name: '/user', value: 'tes17'},
         { name: '/joke', value: 'tes19'},
-        { name: '/rhelp', value: 'tes20'}
 			)),
     async execute(interaction) {
      const cmd = interaction.options.getString('commandname');
