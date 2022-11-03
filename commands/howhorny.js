@@ -19,10 +19,16 @@ module.exports = {
 	.setColor(`e4b400`)
 	.setTitle(`how horny command`)
 	.setDescription(`${user} is ${horny}% horny <a:senti:1031904003866509382>`)
+    const horn3 = new EmbedBuilder()
+	.setColor(`e4b400`)
+	.setTitle(`how horny command`)
+	.setDescription(`${user} is ${horny}% horny <a:senti:1031904003866509382> (fr dude ur so horny)`)
     console.log('[LOG] | "howhornyp.js" was used')
+    if (horny === 100) {
+      return interaction.reply({ embeds: [horn3] })}
 		if (!user)
      return interaction.reply({ embeds: [horn1] })
 		const whois = interaction.options.getString("who");
 		return interaction.reply({ embeds: [horn2] })
-	},
-};
+  	}
+  }

@@ -12,7 +12,7 @@ const skill = [
 ]
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('skillissue')
+		.setName('skillissuegif')
 		.setDescription('haha skill issue'),
 	async execute(interaction) {
     console.log('[LOG] | "dedchat.js" was used')
