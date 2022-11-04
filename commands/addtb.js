@@ -25,7 +25,7 @@ module.exports = {
       UserName: interaction.user.tag
     }).save()
 
-    return interaction.reply(`made a new mark/reset your current mark`)
+    return interaction.reply(`Created a new mark, which contains most of info the bot can get. Use /getmarkedkey to see it`)
     }) 
   }
 }

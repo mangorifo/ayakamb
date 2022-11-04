@@ -19,6 +19,7 @@ var datetime = "Date Time: " + currentdate.getDate() + "/"
     nSchemaMsgMark.findOne({ keyowner: interaction.user.id }, async (err, data) => {
   if (data) {
     const MsgEmbed = new EmbedBuilder()
+      .setColor('00FF00')
     .setTitle('MongoDB Stored Information')
     .setDescription(`Your latest marked info is:\n\nMarked on Guild: (ID) ${data["keytitle"]} (Guild name: \nMarked on Channel: (ID) ${data["channel"]}\nKey Owner: ${data["Name"]} (or "${data["UserName"]}")\nKey ID: ${data["StoreId"]}.${data["channel"]}.${data["keytitle"]}`)
     return interaction.reply({ embeds: [MsgEmbed] })
