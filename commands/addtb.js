@@ -14,7 +14,7 @@ module.exports = {
     nSchemaMsgMark.findOne({ keyowner: interaction.user.id }, async (err, data) => {
 
       if (data) {
-        return interaction.reply('you already added data to the mongo database')
+        return interaction.reply('You already added data to the MongoDB database. Use /deletemark to delete it, or /getmarkedkey to see it')
       }
     new nSchemaMsgMark ({
       keyowner: interaction.user.id,

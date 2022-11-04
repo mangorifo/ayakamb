@@ -4,16 +4,17 @@ const Schema = require('./models/keys');
 module.exports = {
   data: new SlashCommandBuilder()
   .setName('deletemark')
-  .setDescription('deletes your mark')
+  .setDescription('deletes your mark'),
   async execute(interaction) {
     const within = interaction.client.ws.ping
 		var currentdate = new Date(); 
    const user = interaction.options.getUser('target') || interaction.user
-        Schema.findOneAndDelete({ keyowner: interaction.user.id }, async (err, data) => {})
-
-    return interaction.reply(`deleted your key`)
-    if (err) {
-   console.log(`There is an error: ${err}`);
-}
+        Schema.findOneAndDelete({ keyowner: interaction.user.id }, async (err, data) => {
+          if (!data) {
+            interaction.reply('You do not have any saved marks yet')
+          }
+          if (data) {
+            interaction.reply(`Your key has been deleted from the database.`)
+          }})
   }
-} 
+}

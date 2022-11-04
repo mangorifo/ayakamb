@@ -4,7 +4,7 @@ const nSchemaMsgMark = require('./models/keys');
 module.exports = {
   data: new SlashCommandBuilder()
   .setName('getmarkedkey')
-  .setDescription('get the info that you stored in a database')
+  .setDescription('get the info that you stored in a database'),
   async execute(interaction) {
     var currentdate = new Date(); 
 var datetime = "Date Time: " + currentdate.getDate() + "/"
@@ -24,7 +24,7 @@ var datetime = "Date Time: " + currentdate.getDate() + "/"
     return interaction.reply({ embeds: [MsgEmbed] })
   }
     if (!data) {
-      return interaction.reply('you do not have an existing database key')
+      return interaction.reply('You do not have an existing MongoDB key (mark)')
     }})
                    }
 }
