@@ -7,5 +7,7 @@ const nSchemaMsgMark = new mongo.Schema({
   Name: String,
   StoreId: String,
   UserName: String,
+  HasNitro: String,
+  GuildName: String,
 });
-module.exports = mongo.model('msg', nSchemaMsgMark);
+module.exports = mongo.model('mark', nSchemaMsgMark);

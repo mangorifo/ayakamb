@@ -11,7 +11,7 @@ module.exports = {
    const user = interaction.options.getUser('target') || interaction.user
         Schema.findOneAndDelete({ keyowner: interaction.user.id }, async (err, data) => {
           if (!data) {
-            interaction.reply('You do not have any saved marks yet')
+            interaction.reply('You do not have any saved marks yet. Use </markcurrentinfo:1037988535275372555> to make one')
           }
           if (data) {
             interaction.reply(`Your key has been deleted from the database.`)
