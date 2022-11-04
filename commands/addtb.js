@@ -1,24 +1,31 @@
 const { SlashCommandBuilder } = require('discord.js');
 const mongoose = require('mongoose');
-const Schema = require('./client/mongo/models/keys.js');
+const nSchemaMsgMark = require('./models/keys');
 module.exports = {
   data: new SlashCommandBuilder()
-  .setName('atodbtes')
-  .setDescription('test for database'),
-
+  .setName('markcurrentinfo')
+  .setDescription('puts all info the bot can find into a database')
+  .setDMPermission(false),
   async execute(interaction) {
-  
-    Schema.findOne({ Guild: interaction.guild.id }, async (err, data) => {
-  if (data) {
-    respond({"content": `This server's special key is: ${data["SpecialKey"]}!`});
-  } else {
-    new Schema ({
-      Guild: interaction.guild.id,
-      SpecialKey: "Examples ✨"
+
+      const user = interaction.options.getUser('target') || interaction.user
+    const c = [Math.floor(Math.random() * 99999999)];
+    const cget = c
+    nSchemaMsgMark.findOne({ keyowner: interaction.user.id }, async (err, data) => {
+
+      if (data) {
+        return interaction.reply('you already added data to the mongo database')
+      }
+    new nSchemaMsgMark ({
+      keyowner: interaction.user.id,
+      keytitle: interaction.guild.id,
+      channel: interaction.channel.id,
+      Name: user,
+      StoreId: `${user.id}.${interaction.channel.id}.${interaction.guild.id}.${c}:`,
+      UserName: interaction.user.tag
     }).save()
 
-    respond({"content": `Woah! This server doesn't have a key yet 👀 I've just set yours to the default key instead!`});
-  }
-});
+    return interaction.reply(`made a new mark/reset your current mark`)
+    }) 
   }
 }
