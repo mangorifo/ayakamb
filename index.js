@@ -2,8 +2,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const { EmbedBuilder } = require('discord.js');
+const mongoose = require('mongoose');
 
-
+mongoose.connect(process.env.mongodb, { useNewUrlParser: true, useUnifiedTopology: true }).then(console.log('Connected to MongoDB.'));
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, '/commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
@@ -12,7 +14,7 @@ for (const file of commandFiles) {
   const command = require(filePath);
   client.commands.set(command.data.name, command);
 }
-
+const Schema = require('./client/mongo/models/keys.js');
 client.once(Events.ClientReady, () => {
   console.log('[CLIENT] index.js | Client is ready.');
   console.log(`[CLIENT] index.js | Logging in...`)
@@ -32,7 +34,14 @@ client.on(Events.InteractionCreate, async interaction => {
     await command.execute(interaction);
   } catch (error) {
     console.error(error);
-    await interaction.reply({ content: 'Sorry, the bot has encountered an error... (Bot may have crashed too)', ephemeral: true });
+    const errorem = new EmbedBuilder()
+    .setName('Error')
+    .setDescription('The bot has encountered an error.')
+    .addFields(
+		{ name: 'More details:', value: error }
+      )
+    .setColor(ff0000)
+    await interaction.reply({ embeds: [errorem], ephemeral: true });
   }
 })
 // events handler

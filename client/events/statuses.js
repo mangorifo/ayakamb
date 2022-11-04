@@ -14,7 +14,7 @@ module.exports = {
         activities: [
           {
             name: `😱`,
-            type: `LISTENING`,
+            ActivityType: `LISTENING`,
           },
         ],
         status: "idle",

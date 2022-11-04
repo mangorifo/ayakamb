@@ -15,7 +15,7 @@ module.exports = {
 		.setName('skillissuegif')
 		.setDescription('haha skill issue'),
 	async execute(interaction) {
-    console.log('[LOG] | "dedchat.js" was used')
+    console.log('[LOG] | "skillissue.js" was used')
     const issue = skill[Math.floor(Math.random() * skill.length)];
 		return interaction.reply(issue);
 	},
