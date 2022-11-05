@@ -1,5 +1,3 @@
-// this command updates all slash commands in all servers/dms or adds them to the slash command list
-
 const { REST, Routes } = require('discord.js');
 const { clientId, guildId, token } = require('./config.json');
 const fs = require('node:fs');
@@ -23,12 +21,12 @@ const rest = new REST({ version: '10' }).setToken(process.env.token);
 		console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
 		// The put method is used to fully refresh all commands in the guild with the current set
-		await rest.put(
+		const data = await rest.put(
 	Routes.applicationCommands(clientId),
 	{ body: commands },
 );
 
-		console.log(`Successfully reloaded ${commands.length} application (/) commands.`);
+		console.log(`Successfully reloaded ${data.length} application (/) commands.`);
 	} catch (error) {
 		// And of course, make sure you catch and log any errors!
 		console.error(error);

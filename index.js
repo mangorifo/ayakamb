@@ -3,9 +3,7 @@ const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const { EmbedBuilder } = require('discord.js');
-const mongoose = require('mongoose');
 
-mongoose.connect(process.env.mongodb, { useNewUrlParser: true, useUnifiedTopology: true }).then(console.log('[CLIENT - MONGOOSE] index.js | Connected to MongoDB.'));
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, '/commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
@@ -14,7 +12,7 @@ for (const file of commandFiles) {
   const command = require(filePath);
   client.commands.set(command.data.name, command);
 }
-const Schema = require('./commands/models/keys.js');
+
 client.once(Events.ClientReady, () => {
   console.log('[CLIENT] index.js | Client is ready.');
   console.log(`[CLIENT] index.js | Logging in...`)

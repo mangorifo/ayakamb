@@ -37,15 +37,12 @@ module.exports = {
 // ok
 //    if (!user)
 //      return interaction.reply({ embeds: [issue1] })
-    if (!user === !idcounthigh) {
-      return interaction.reply({ embeds: [issue5] })
-    }
     if (skillissue == 0) {
       return interaction.reply({ embeds: [issue3] })
     }
     if (skillissue > 80) {
       return interaction.reply({ embeds: [issue4] })
     }
-    return interaction.reply({ embeds: [issue2] })
+    interaction.reply({ embeds: [issue2] })
   },
 };
