@@ -10,5 +10,7 @@ const nSchemaMsgMark = new mongo.Schema({
   HasNitro: String,
   GuildName: String,
   AcMadeAt: String,
+  AvatarImg: String,
+  StoredAt: String,
 });
 module.exports = mongo.model('mark', nSchemaMsgMark);

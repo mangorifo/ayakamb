@@ -22,11 +22,16 @@ var datetime = "Date Time: " + currentdate.getDate() + "/"
     const MsgEmbed = new EmbedBuilder()
       .setColor('e4b400')
     .setTitle(`Marked information for ${user.username}`)
-    .setDescription(`${user.username}'s latest marked info is:\n\nMarked on Guild: (ID) ${data["keymadeog"]} (Guild name: ${data["GuildName"]})\nMarked on Channel: (ID) ${data["channel"]}\nKey Owner: ${data["Name"]} (written username: "${data["UserName"]}")\nAccount made at: <t:${data["AcMadeAt"]}:R> (exact date: <t:${data["AcMadeAt"]}:F>)\nKey ID: ${data["StoreId"]}`)
+    .setDescription(`${user.username}'s latest marked info is:\n\nMarked on Guild: (ID) ${data["keymadeog"]} (Guild name: ${data["GuildName"]})\nMarked on Channel: (ID) ${data["channel"]}\nKey Owner: ${data["Name"]} (written username: "${data["UserName"]}")\nAccount made at: <t:${data["AcMadeAt"]}:R> (exact date: <t:${data["AcMadeAt"]}:F>)\nMarked at: ${data["StoredAt"]}\nKey ID: ${data["StoreId"]}`)
+    .setImage(data["AvatarImg"])
     return interaction.reply({ embeds: [MsgEmbed] })
   }
     if (!data) {
-      return interaction.reply(`${user.tag} does not have an existing MongoDB key (mark). Make one using </markcurrentinfo:1037988535275372555>`)
+      const MsgEmbed = new EmbedBuilder()
+    .setColor('FF0000')
+    .setTitle(`Error`)
+    .setDescription(`${user.username} does not have an existing mark. Make one using </markcurrentinfo:1037988535275372555>`)
+      return interaction.reply({ embeds: [MsgEmbed] })
     }})
                    }
 }
