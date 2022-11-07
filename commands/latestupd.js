@@ -9,8 +9,8 @@ module.exports = {
 	.setColor(`00FF00`)
 	.setTitle(`Changelog`)
 	.setAuthor({ name: 'latest update of AyakaMBot'})
-	.setDescription(`*new commands*\n\n/markcurrentinfo: save user info to a database\n/deletemark: deletes mark\n/getmarkedkey: gets the mark that was stored in a database`)
-  .setFooter(`If commands aren't listed here, that means they're not done/in beta/still testing`)
+	.setDescription(`*update commands commands*\n\nswitch text in ayakavl.js and hutaovl.js into embed`)
+  .setFooter({ text: `If commands aren't listed here, that means they're not done/in beta/still testing` })
         return interaction.reply({ embeds: [messageEmbed] });
     },
 };

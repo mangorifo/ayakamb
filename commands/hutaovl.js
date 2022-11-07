@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const vl = [
 	`**Hello**\n\nYoh, now just why might you be looking for me, hm? Oh, you didn't know? I'm the 77th Director of the Wangsheng Funeral Parlor, Hu Tao. Though by the looks of you... Radiant glow, healthy posture... Yes, you're definitely here for something other than that which falls within my regular line of work, aren't you?`,
 	`**Chat: Wangsheng Funeral Parlor**\n\nWanna come over for tea?`,
@@ -87,6 +87,10 @@ module.exports = {
 	async execute(interaction) {
 		console.log('[LOG] | "hutaovl.js" was used')
     const voiceline = vl[Math.floor(Math.random() * vl.length)];
-		return interaction.reply(voiceline);
+	const VoicelineEmbed = new EmbedBuilder()
+    .setAuthor({ name: `Hu Tao`} )
+    .setTitle(`Generated voiceline`)
+    .setDescription(voiceline)
+		return interaction.reply({ embeds: [VoicelineEmbed] });
 	},
 };
