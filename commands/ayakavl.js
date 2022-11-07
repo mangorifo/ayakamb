@@ -76,9 +76,9 @@ module.exports = {
 	async execute(interaction) {
     const voiceline = vl[Math.floor(Math.random() * vl.length)];
     const VoicelineEmbed = new EmbedBuilder()
-    .setAuthor({ name: `Kamisato Ayaka`})
-    .setTitle(`Generated voiceline`)
-    .setDescription(voiceline)
+      .setAuthor({ name: `Kamisato Ayaka`})
+      .setTitle(`Generated voiceline`)
+      .setDescription(voiceline)
     console.log('[LOG] | "ayakavl.js" was used')
 
 		return interaction.reply({ embeds: [VoicelineEmbed] });

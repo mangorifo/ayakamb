@@ -85,12 +85,12 @@ module.exports = {
 		.setName('hutaovoiceline')
 		.setDescription('Sends a random voiceline of Hu Tao from "Genshin Impact".'),
 	async execute(interaction) {
-		console.log('[LOG] | "hutaovl.js" was used')
-    const voiceline = vl[Math.floor(Math.random() * vl.length)];
-	const VoicelineEmbed = new EmbedBuilder()
-    .setAuthor({ name: `Hu Tao`} )
-    .setTitle(`Generated voiceline`)
-    .setDescription(voiceline)
+	console.log('[LOG] | "hutaovl.js" was used')
+    	const voiceline = vl[Math.floor(Math.random() * vl.length)];
+		const VoicelineEmbed = new EmbedBuilder()
+    		.setAuthor({ name: `Hu Tao`} )
+    		.setTitle(`Generated voiceline`)
+    		.setDescription(voiceline)
 		return interaction.reply({ embeds: [VoicelineEmbed] });
 	},
 };
