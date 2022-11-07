@@ -15,7 +15,7 @@ module.exports = {
 )
     const MsgEmbed = new EmbedBuilder()
       .setTitle(`${user?.tag}'s avatar`)
-      .setImage(`${user?.displayAvatarURL()}?quality=lossless&size=1024`)
+      .setImage(user.displayAvatarURL().slice(0, -4) + 'png?quality=lossless&size=1024')
       .setColor("#000")
     console.log('[LOG] | "avatar.js" was used')
 

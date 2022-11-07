@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const vl = [
      `**Joining Party: I**\n\nKamisato Ayaka, present.`,
      `**Chat: Famous Sword**\n\nA blade embraces its duty, as a jeweler cherishes their gems.`,
@@ -74,6 +74,13 @@ module.exports = {
 		.setName('ayakavoiceline')
 		.setDescription(`Sends a random voiceline of Ayaka from Genshin Impact. (this command's output is written manually)`),
 	async execute(interaction) {
+    const row = new ActionRowBuilder()
+			.addComponents(
+				new ButtonBuilder()
+					.setCustomId('abu1')
+					.setLabel('Send me another one')
+					.setStyle(ButtonStyle.Secondary),
+			);
     const voiceline = vl[Math.floor(Math.random() * vl.length)];
     const VoicelineEmbed = new EmbedBuilder()
       .setAuthor({ name: `Kamisato Ayaka`})
@@ -81,6 +88,17 @@ module.exports = {
       .setDescription(voiceline)
     console.log('[LOG] | "ayakavl.js" was used')
 
-		return interaction.reply({ embeds: [VoicelineEmbed] });
-	},
-};
+		await interaction.reply({ embeds: [VoicelineEmbed], components: [row] })
+    const filter = i => i.customId === 'abu1' && i.user.id === interaction.user.id;
+
+const collector = interaction.channel.createMessageComponentCollector({ filter });
+
+collector.on('collect', async i => {
+  const vl2 = vl[Math.floor(Math.random() * vl.length)];
+    const VLE = new EmbedBuilder()
+      .setAuthor({ name: `Kamisato Ayaka`})
+      .setTitle(`Generated voiceline`)
+      .setDescription(vl2)
+	await i.update({ embeds: [VLE], components: [row] })});
+  }
+}

@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const vl = [
 	`**Hello**\n\nYoh, now just why might you be looking for me, hm? Oh, you didn't know? I'm the 77th Director of the Wangsheng Funeral Parlor, Hu Tao. Though by the looks of you... Radiant glow, healthy posture... Yes, you're definitely here for something other than that which falls within my regular line of work, aren't you?`,
 	`**Chat: Wangsheng Funeral Parlor**\n\nWanna come over for tea?`,
@@ -85,12 +85,30 @@ module.exports = {
 		.setName('hutaovoiceline')
 		.setDescription('Sends a random voiceline of Hu Tao from "Genshin Impact".'),
 	async execute(interaction) {
+    const row = new ActionRowBuilder()
+			.addComponents(
+				new ButtonBuilder()
+					.setCustomId('abu1')
+					.setLabel('Send me another one')
+					.setStyle(ButtonStyle.Secondary),
+			);
 	console.log('[LOG] | "hutaovl.js" was used')
     	const voiceline = vl[Math.floor(Math.random() * vl.length)];
 		const VoicelineEmbed = new EmbedBuilder()
     		.setAuthor({ name: `Hu Tao`} )
     		.setTitle(`Generated voiceline`)
     		.setDescription(voiceline)
-		return interaction.reply({ embeds: [VoicelineEmbed] });
+		await interaction.reply({ embeds: [VoicelineEmbed], components: [row] });
+    const filter = i => i.customId === 'abu1' && i.user.id === interaction.user.id;
+
+const collector = interaction.channel.createMessageComponentCollector({ filter });
+
+collector.on('collect', async i => {
+  const vl2 = vl[Math.floor(Math.random() * vl.length)];
+    const VLE = new EmbedBuilder()
+      .setAuthor({ name: `Hu Tao`})
+      .setTitle(`Generated voiceline`)
+      .setDescription(vl2)
+	await i.update({ embeds: [VLE], components: [row] })});
 	},
 };
