@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const vl = [
      `**Joining Party: I**\n\nKamisato Ayaka, present.`,
      `**Chat: Famous Sword**\n\nA blade embraces its duty, as a jeweler cherishes their gems.`,
@@ -74,6 +74,7 @@ module.exports = {
 		.setName('ayakavoiceline')
 		.setDescription(`Sends a random voiceline of Ayaka from Genshin Impact. (this command's output is written manually)`),
 	async execute(interaction) {
+    
     console.log('[LOG] | "ayakavl.js" was used')
     const voiceline = vl[Math.floor(Math.random() * vl.length)];
 		return interaction.reply(voiceline);

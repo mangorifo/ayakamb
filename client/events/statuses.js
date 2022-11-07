@@ -21,4 +21,4 @@ module.exports = {
       });
   },
 };
-console.log('[EVENTS] "statuses.js" - loaded statuses event')
+console.log('[EVENTS] statuses.js | loaded statuses event')
