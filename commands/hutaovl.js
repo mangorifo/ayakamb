@@ -88,7 +88,7 @@ module.exports = {
     const row = new ActionRowBuilder()
 			.addComponents(
 				new ButtonBuilder()
-					.setCustomId('abu1')
+					.setCustomId('hutao')
 					.setLabel('Send me another one')
 					.setStyle(ButtonStyle.Secondary),
 			);
@@ -96,10 +96,9 @@ module.exports = {
     	const voiceline = vl[Math.floor(Math.random() * vl.length)];
 		const VoicelineEmbed = new EmbedBuilder()
     		.setAuthor({ name: `Hu Tao`} )
-    		.setTitle(`Generated voiceline`)
     		.setDescription(voiceline)
 		await interaction.reply({ embeds: [VoicelineEmbed], components: [row] });
-    const filter = i => i.customId === 'abu1' && i.user.id === interaction.user.id;
+    const filter = i => i.customId === 'hutao' && i.user.id === interaction.user.id;
 
 const collector = interaction.channel.createMessageComponentCollector({ filter });
 
