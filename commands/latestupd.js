@@ -7,7 +7,7 @@ module.exports = {
        const row = new ActionRowBuilder()
 			.addComponents(
 				new ButtonBuilder()
-					.setCustomId('abu1')
+					.setCustomId('dsfsdfsdf')
 					.setLabel('GitHub repository')
 					.setStyle(ButtonStyle.Secondary),
 			);
@@ -19,7 +19,7 @@ module.exports = {
 	.setDescription(`*update commands*\n\nAdd "Send me another one" button in voiceline command stuff`)
   .setFooter({ text: `If commands aren't listed here, that means they're not done/in beta/still testing` })
         await interaction.reply({ embeds: [messageEmbed], components: [row] });
-      const filter = i => i.customId === 'abu1' && i.user.id === interaction.user.id;
+      const filter = i => i.customId === 'dsfsdfsdf' && i.user.id === interaction.user.id;
 
 const collector = interaction.channel.createMessageComponentCollector({ filter });
 

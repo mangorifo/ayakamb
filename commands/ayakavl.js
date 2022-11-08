@@ -77,7 +77,7 @@ module.exports = {
     const row = new ActionRowBuilder()
 			.addComponents(
 				new ButtonBuilder()
-					.setCustomId('abu1')
+					.setCustomId('ayaka')
 					.setLabel('Send me another one')
 					.setStyle(ButtonStyle.Secondary),
 			);
@@ -89,7 +89,7 @@ module.exports = {
     console.log('[LOG] | "ayakavl.js" was used')
 
 		await interaction.reply({ embeds: [VoicelineEmbed], components: [row] })
-    const filter = i => i.customId === 'abu1' && i.user.id === interaction.user.id;
+    const filter = i => i.customId === 'ayaka' && i.user.id === interaction.user.id;
 
 const collector = interaction.channel.createMessageComponentCollector({ filter });
 

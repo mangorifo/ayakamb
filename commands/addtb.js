@@ -34,6 +34,7 @@ let currentDate = `${day}/${month}/${year}`;
       if (user.bot === true) {
         return interaction.reply({ embeds: [AttemptedMarkBot] })
       }
+      
     if (user) {
       new nSchemaMsgMark ({
       keyowner: user.id,
@@ -45,7 +46,7 @@ let currentDate = `${day}/${month}/${year}`;
       HasNitro: user.premium,
       GuildName: interaction.guild.name,
       AcMadeAt: user.createdTimestamp.toString().slice(0, -3),
-      AvatarImg: user.displayAvatarURL().slice(0, -4) + 'png?quality=lossless&size=1024',
+      AvatarImg: user.displayAvatarURL() + '?quality=lossless&size=1024',
       StoredAt: Date.now().toString().slice(0, -3),
     }).save()
     interaction.reply({ embeds: [NewMark] })

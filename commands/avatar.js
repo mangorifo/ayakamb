@@ -13,13 +13,24 @@ module.exports = {
       force: true
     }
 )
-    const MsgEmbed = new EmbedBuilder()
-      .setTitle(`${user?.tag}'s avatar`)
-      .setImage(user.displayAvatarURL().slice(0, -4) + 'png?quality=lossless&size=1024')
+    if (user.displayAvatarURL().endsWith(".gif") == true) {
+  const fl = new EmbedBuilder()
+      .setTitle(`${user.username}'s avatar`)    .setImage(user.displayAvatarURL().slice(0, -3) + 'gif?quality=lossless&size=1024')
+
       .setColor("#000")
+      await interaction.reply({ embeds: [fl]})
+  }
+     if (user.displayAvatarURL().endsWith(".webp") == true) {
+      
+const MEmbedTrue = new EmbedBuilder()
+      .setTitle(`${user.username}'s avatar`)    .setImage(user.displayAvatarURL().slice(0, -4) + 'png?quality=lossless&size=1024')
+
+      .setColor("#000")
+      await interaction.reply({ embeds: [MEmbedTrue]})
+    }
     console.log('[LOG] | "avatar.js" was used')
 
 
-    interaction.reply({ embeds: [MsgEmbed] });
+    
   },
 };
