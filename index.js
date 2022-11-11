@@ -32,14 +32,8 @@ client.on(Events.InteractionCreate, async interaction => {
     await command.execute(interaction);
   } catch (error) {
     console.error(error);
-    const errorem = new EmbedBuilder()
-    .setName('Error')
-    .setDescription('The bot has encountered an error.')
-    .addFields(
-		{ name: 'More details:', value: error }
-      )
-    .setColor(ff0000)
-    await interaction.reply({ embeds: [errorem], ephemeral: true });
+   
+    await interaction.reply({ content: "omg bot has code issue?", ephemeral: true });
   }
 })
 // events handler
