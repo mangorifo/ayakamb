@@ -4,17 +4,11 @@ module.exports = {
   name: "ready",
   once: false,
   execute(client) {
-    const activities = [
-      { name: `you.`, type: ActivityType.Watching},
-      { name: `😱`, type: ActivityType.Listening},
-      { name: `you`, type: ActivityType.Listening},
-      { name: `text`, type: ActivityType.Watching},
-    ];
       client.user.setPresence({
         activities: [
           {
-            name: `😱`,
-            ActivityType: `LISTENING`,
+            name: `with you`,
+            ActivityType: "playing",
           },
         ],
         status: "idle",

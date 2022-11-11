@@ -96,7 +96,6 @@ collector.on('collect', async i => {
   const vl2 = vl[Math.floor(Math.random() * vl.length)];
     const VLE = new EmbedBuilder()
       .setAuthor({ name: `Kamisato Ayaka`})
-      .setTitle(`Generated voiceline`)
       .setDescription(vl2)
 	await i.update({ embeds: [VLE], components: [row] })});
   }
