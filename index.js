@@ -17,7 +17,7 @@ client.once(Events.ClientReady, () => {
   console.log('[CLIENT] index.js | Client is ready.');
   console.log(`[CLIENT] index.js | Logging in...`)
   console.log(`[CLIENT] index.js | Logged in as ${client.user.tag}!`)
-  
+
 })
 
 
@@ -32,7 +32,7 @@ client.on(Events.InteractionCreate, async interaction => {
     await command.execute(interaction);
   } catch (error) {
     console.error(error);
-   
+
     await interaction.reply({ content: "omg bot has code issue?", ephemeral: true });
   }
 })

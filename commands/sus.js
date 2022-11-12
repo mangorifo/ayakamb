@@ -16,12 +16,12 @@ const sus = [
   "https://tenor.com/view/when-the-impostor-is-sus-impostor-impostor-among-us-among-us-among-us-sus-gif-24712125",
 ]
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('sus')
-		.setDescription('sus'),
-	async execute(interaction) {
+  data: new SlashCommandBuilder()
+    .setName('sus')
+    .setDescription('sus'),
+  async execute(interaction) {
     console.log('[LOG] | "sus.js" was used')
     const sussygif = sus[Math.floor(Math.random() * sus.length)];
-		return interaction.reply(sussygif);
-	},
+    return interaction.reply(sussygif);
+  },
 };

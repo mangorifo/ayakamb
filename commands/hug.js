@@ -4,7 +4,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("hug")
     .setDescription("hug someone.")
-  	.addUserOption((option) =>
+    .addUserOption((option) =>
       option.setName("user").setDescription("who to hug?").setRequired(true)
     ),
   async execute(interaction) {
@@ -17,20 +17,20 @@ module.exports = {
       `<@${interaction.user.id}> hugs ${user} and they become best friends!`,
       `<@${interaction.user.id}> asks ${user} for hug, and ${user} hugs them`,
       `${user} hugs <@${interaction.user.id}> before <@${interaction.user.id}> hugged them. ❤️`,
-      ]
+    ]
     const huggif = [
-    "https://media.tenor.com/J7eGDvGeP9IAAAAC/enage-kiss-anime-hug.gif",
-"https://media.tenor.com/kCZjTqCKiggAAAAC/hug.gif",  "https://media.tenor.com/8o4fWGwBY1EAAAAd/aharensan-aharen.gif",   "https://media.tenor.com/8BqG6yTLCLEAAAAC/anime.gif",
-      ]
-      
+      "https://media.tenor.com/J7eGDvGeP9IAAAAC/enage-kiss-anime-hug.gif",
+      "https://media.tenor.com/kCZjTqCKiggAAAAC/hug.gif", "https://media.tenor.com/8o4fWGwBY1EAAAAd/aharensan-aharen.gif", "https://media.tenor.com/8BqG6yTLCLEAAAAC/anime.gif",
+    ]
+
     const hgm2 = hugmsg[Math.floor(Math.random() * hugmsg.length)];
     const hgifoutput = huggif[Math.floor(Math.random() * huggif.length)];
     const exampleEmbed = new EmbedBuilder()
-	.setColor(0x0099FF)
-	.setTitle('huggy')
-	.setDescription(hgm2)
-	.setImage(hgifoutput)
+      .setColor(0x0099FF)
+      .setTitle('huggy')
+      .setDescription(hgm2)
+      .setImage(hgifoutput)
 
-interaction.reply({ embeds: [exampleEmbed] });
+    interaction.reply({ embeds: [exampleEmbed] });
   },
 };

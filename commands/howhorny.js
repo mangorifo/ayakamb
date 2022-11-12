@@ -2,33 +2,34 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('howhorny')
-		.setDescription('how horni are you???')
-		.addUserOption((option) =>
+  data: new SlashCommandBuilder()
+    .setName('howhorny')
+    .setDescription('how horni are you???')
+    .addUserOption((option) =>
       option.setName("user").setDescription("if u wanna find out if the selected user is horny").setRequired(false)
     ),
-	async execute(interaction) {
+  async execute(interaction) {
     const user = interaction.options.getMember("user");
     const horny = [Math.floor(Math.random() * 101)];
     const horn1 = new EmbedBuilder()
-	.setColor(`e4b400`)
-	.setTitle(`how horny command`)
-	.setDescription(`<@${interaction.user.id}> is ${horny}% horny <a:senti:1031904003866509382>`)
+      .setColor(`e4b400`)
+      .setTitle(`how horny command`)
+      .setDescription(`<@${interaction.user.id}> is ${horny}% horny <a:senti:1031904003866509382>`)
     const horn2 = new EmbedBuilder()
-	.setColor(`e4b400`)
-	.setTitle(`how horny command`)
-	.setDescription(`${user} is ${horny}% horny <a:senti:1031904003866509382>`)
+      .setColor(`e4b400`)
+      .setTitle(`how horny command`)
+      .setDescription(`${user} is ${horny}% horny <a:senti:1031904003866509382>`)
     const horn3 = new EmbedBuilder()
-	.setColor(`e4b400`)
-	.setTitle(`how horny command`)
-	.setDescription(`${user} is ${horny}% horny <a:senti:1031904003866509382> (fr dude ur so horny)`)
+      .setColor(`e4b400`)
+      .setTitle(`how horny command`)
+      .setDescription(`${user} is ${horny}% horny <a:senti:1031904003866509382> (fr dude ur so horny)`)
     console.log('[LOG] | "howhornyp.js" was used')
     if (horny === 100) {
-      return interaction.reply({ embeds: [horn3] })}
-		if (!user)
-     return interaction.reply({ embeds: [horn1] })
-		const whois = interaction.options.getString("who");
-		return interaction.reply({ embeds: [horn2] })
-  	}
+      return interaction.reply({ embeds: [horn3] })
+    }
+    if (!user)
+      return interaction.reply({ embeds: [horn1] })
+    const whois = interaction.options.getString("who");
+    return interaction.reply({ embeds: [horn2] })
   }
+}

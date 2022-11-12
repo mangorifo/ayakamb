@@ -8,29 +8,29 @@ module.exports = {
     .addUserOption(option => option.setName('target').setDescription('The user\'s avatar to show')),
   async execute(interaction) {
     const user = await interaction.client.users.fetch(
-    interaction.options.getUser("target") || interaction.user,
-    {
-      force: true
-    }
-)
+      interaction.options.getUser("target") || interaction.user,
+      {
+        force: true
+      }
+    )
     if (user.displayAvatarURL().endsWith(".gif") == true) {
-  const fl = new EmbedBuilder()
-      .setTitle(`${user.username}'s avatar`)    .setImage(user.displayAvatarURL().slice(0, -3) + 'gif?quality=lossless&size=1024')
+      const fl = new EmbedBuilder()
+        .setTitle(`${user.username}'s avatar`).setImage(user.displayAvatarURL().slice(0, -3) + 'gif?quality=lossless&size=1024')
 
-      .setColor("#000")
-      await interaction.reply({ embeds: [fl]})
-  }
-     if (user.displayAvatarURL().endsWith(".webp") == true) {
-      
-const MEmbedTrue = new EmbedBuilder()
-      .setTitle(`${user.username}'s avatar`)    .setImage(user.displayAvatarURL().slice(0, -4) + 'png?quality=lossless&size=1024')
+        .setColor("#000")
+      await interaction.reply({ embeds: [fl] })
+    }
+    if (user.displayAvatarURL().endsWith(".webp") == true) {
 
-      .setColor("#000")
-      await interaction.reply({ embeds: [MEmbedTrue]})
+      const MEmbedTrue = new EmbedBuilder()
+        .setTitle(`${user.username}'s avatar`).setImage(user.displayAvatarURL().slice(0, -4) + 'png?quality=lossless&size=1024')
+
+        .setColor("#000")
+      await interaction.reply({ embeds: [MEmbedTrue] })
     }
     console.log('[LOG] | "avatar.js" was used')
 
 
-    
+
   },
 };

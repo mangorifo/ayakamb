@@ -34,9 +34,9 @@ module.exports = {
       .setDescription(`${user} has 100% skill issues <a:senti:1031904003866509382> (skill issue overload)`)
     console.log('[LOG] | "hskill.js" was used')
     const usid = interaction.user.id
-// ok
-//    if (!user)
-//      return interaction.reply({ embeds: [issue1] })
+    // ok
+    //    if (!user)
+    //      return interaction.reply({ embeds: [issue1] })
     if (skillissue == 0) {
       return interaction.reply({ embeds: [issue3] })
     }

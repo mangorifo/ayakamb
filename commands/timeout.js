@@ -98,8 +98,7 @@ module.exports = {
         const dmEmbed = new EmbedBuilder()
           .setTitle("You have been timed out!")
           .setDescription(
-            `You have been timed out ${
-              reason ? `for the following reason: \n${reason}.` : ""
+            `You have been timed out ${reason ? `for the following reason: \n${reason}.` : ""
             }`
           )
           .setColor("#bdb3ce")
@@ -110,10 +109,9 @@ module.exports = {
         const embed = new EmbedBuilder()
           .setTitle("User has been timed out!")
           .setDescription(
-            `${user.user.tag} has been timed out for ${duration} ${
-              reason
-                ? `for the following reason: \n${reason}.`
-                : "for an unknown reason."
+            `${user.user.tag} has been timed out for ${duration} ${reason
+              ? `for the following reason: \n${reason}.`
+              : "for an unknown reason."
             }`
           )
           .setColor("#bdb3ce")

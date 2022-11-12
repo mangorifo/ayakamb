@@ -4,6 +4,6 @@ const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require(
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.on(Events.InteractionCreate, interaction => {
-	if (!interaction.isButton()) return;
-	console.log(interaction);
+  if (!interaction.isButton()) return;
+  console.log(interaction);
 });

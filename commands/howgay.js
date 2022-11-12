@@ -27,11 +27,11 @@ module.exports = {
       .setDescription(`${user} is 100% gay <a:senti:1031904003866509382> (so gay)`)
     console.log('[LOG] | "howgay.js" was used')
     const usid = interaction.user.id
-    
-// ok
+
+    // ok
     if (user === idcounthigh) {
-       return interaction.reply({ embeds: [gaymax] })
-  }
+      return interaction.reply({ embeds: [gaymax] })
+    }
     const whois = interaction.options.getString("who");
     return interaction.reply({ embeds: [gay2] })
   },

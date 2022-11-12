@@ -16,12 +16,12 @@ const ded = [
   "https://tenor.com/view/xqc-dies-chat-dead-gif-25041263",
 ]
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('deadchat')
-		.setDescription('sends a random "dead chat" gif so that you dont have to find one'),
-	async execute(interaction) {
+  data: new SlashCommandBuilder()
+    .setName('deadchat')
+    .setDescription('sends a random "dead chat" gif so that you dont have to find one'),
+  async execute(interaction) {
     console.log('[LOG] | "dedchat.js" was used')
     const deadchat = ded[Math.floor(Math.random() * ded.length)];
-		return interaction.reply(deadchat);
-	},
+    return interaction.reply(deadchat);
+  },
 };

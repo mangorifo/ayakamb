@@ -11,12 +11,12 @@ const skill = [
   "https://tenor.com/view/skill-tissue-skill-issue-gif-25574752"
 ]
 module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('skillissuegif')
-		.setDescription('haha skill issue'),
-	async execute(interaction) {
+  data: new SlashCommandBuilder()
+    .setName('skillissuegif')
+    .setDescription('haha skill issue'),
+  async execute(interaction) {
     console.log('[LOG] | "skillissue.js" was used')
     const issue = skill[Math.floor(Math.random() * skill.length)];
-		return interaction.reply(issue);
-	},
+    return interaction.reply(issue);
+  },
 };
