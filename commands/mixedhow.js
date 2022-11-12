@@ -3,7 +3,7 @@ const { EmbedBuilder } = require('discord.js');
 const idcounthigh = require('./blacklist.json');
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('howgay')
+    .setName('how')
     .setDescription('hmm')
     .addUserOption((option) =>
       option.setName("user").setDescription("if u wanna find out if the mentioned user is gay").setRequired(false)
