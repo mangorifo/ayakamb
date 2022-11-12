@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
-const { vayakal } = require('./text/ayaka.json');
+const { vayakal } = require('./text/json/ayaka.json');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ayakavoiceline')
