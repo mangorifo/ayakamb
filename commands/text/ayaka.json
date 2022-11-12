@@ -1,7 +1,8 @@
 {
-  "vayakal": ["**Joining Party: I**\n\nKamisato Ayaka, present.",
-     "**Chat: Famous Sword**\n\nA blade embraces its duty, as a jeweler cherishes their gems.",
-     "**Chat: Sword**\n\nA blade is like a tea-leaf. Only those who sample it many times can appreciate its true qualities.",
+  "vayakal": [
+      "**Joining Party: I**\n\nKamisato Ayaka, present.",
+      "**Chat: Famous Sword**\n\nA blade embraces its duty, as a jeweler cherishes their gems.",
+      "**Chat: Sword**\n\nA blade is like a tea-leaf. Only those who sample it many times can appreciate its true qualities.",
       "**Chat: Stability**\n\nI only wish life could be as leisurely as this a little more often… How greedy of me.",
       "**Chat: Zoning Out**\n\nSo this is a day in the life of the Traveler… Hehe, I’m learning more about you all the time.",
       "**Good Morning**\n\nOh, good morning, Traveler. …When I see you in the morning, somehow, it makes me feel like… today is going to be a good day",
@@ -66,5 +67,6 @@
       "**Ally at Low HP: I**\n\nDo not overdo it.",
       "**Low HP: III**\n\nWe ought to end this!",
       "**Low HP: II**\n\nA worthy opponent...",
-      "**Low HP: I**\n\nI will not stand for this."]
+      "**Low HP: I**\n\nI will not stand for this."
+  ]
 }
