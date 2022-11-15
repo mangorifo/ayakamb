@@ -7,9 +7,7 @@ const nSchemaMsgMark = new mongo.Schema({
   Name: String,
   StoreId: String,
   UserName: String,
-  HasNitro: String,
   GuildName: String,
-  AcMadeAt: String,
   AvatarImg: String,
   StoredAt: String,
 });

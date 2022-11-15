@@ -43,9 +43,7 @@ let currentDate = `${day}/${month}/${year}`;
       Name: user,
       StoreId: `${user.id}:${c}`,
       UserName: user.tag,
-      HasNitro: user.premium,
       GuildName: interaction.guild.name,
-      AcMadeAt: user.createdTimestamp.toString().slice(0, -3),
       AvatarImg: user.displayAvatarURL() + '?quality=lossless&size=1024',
       StoredAt: Date.now().toString().slice(0, -3),
     }).save()

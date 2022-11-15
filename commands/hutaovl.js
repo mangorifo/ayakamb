@@ -107,7 +107,7 @@ module.exports = {
       const VLE = new EmbedBuilder()
         .setAuthor({ name: `Hu Tao` })
         .setDescription(vl2)
-      await i.update({ embeds: [VLE], components: [row] })
+      return i.update({ embeds: [VLE], components: [row] })
     });
   },
 };

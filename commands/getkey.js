@@ -22,8 +22,9 @@ module.exports = {
         const MsgEmbed = new EmbedBuilder()
           .setColor('e4b400')
           .setTitle(`Marked information for ${user.username}`)
-          .setDescription(`${user.username}'s latest marked info is:\n\nMarked on Guild: (ID) ${data["keymadeog"]} (Guild name: ${data["GuildName"]})\nMarked on Channel: (ID) ${data["channel"]}\nKey Owner: ${data["Name"]} (written username: "${data["UserName"]}")\nAccount made at: <t:${data["AcMadeAt"]}:R> (exact date: <t:${data["AcMadeAt"]}:F>)\nMarked at: <t:${data["StoredAt"]}:F>\nKey ID: ${data["StoreId"]}`)
+          .setDescription(`${user.username}'s latest marked info is:\n\nMarked on Guild: (ID) ${data["keymadeog"]} (Guild name: ${data["GuildName"]})\nMarked on Channel: (ID) ${data["channel"]}\nKey Owner: ${data["Name"]} (written username: "${data["UserName"]}")\nMarked at: <t:${data["StoredAt"]}:F>\nKey ID: ${data["StoreId"]}`)
           .setImage(data["AvatarImg"])
+          .setFooter({ text: `Requested by ${interaction.user.username}`, iconURL: interaction.user.displayAvatarURL() })
         return interaction.reply({ embeds: [MsgEmbed] })
       }
       if (!data) {
@@ -31,6 +32,7 @@ module.exports = {
           .setColor('FF0000')
           .setTitle(`Error`)
           .setDescription(`${user.username} does not have an existing mark. Make one using </markcurrentinfo:1037988535275372555>`)
+        .setFooter({ text: `Requested by ${interaction.user.username}`, iconURL: interaction.user.displayAvatarURL() })
         return interaction.reply({ embeds: [MsgEmbed] })
       }
     })

@@ -15,9 +15,9 @@ module.exports = {
     const messageEmbed = new EmbedBuilder()
       .setColor(`00FF00`)
       .setTitle(`Changelog`)
-      .setAuthor({ name: 'latest update of AyakaMBot' })
-      .setDescription(`*update commands*\n\nAdd "Send me another one" button in voiceline command stuff`)
-      .setFooter({ text: `If commands aren't listed here, that means they're not done/in beta/still testing` })
+      .setAuthor({ name: 'latest update of AyakaMB' })
+      .setDescription(`*new commands*\n\nAdd /say command`)
+      .setFooter({ text: `If commands aren't listed here, that means they're not done/in beta/still testing/not much of a change` })
     await interaction.reply({ embeds: [messageEmbed], components: [row] });
 
 

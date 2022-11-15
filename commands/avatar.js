@@ -18,7 +18,7 @@ module.exports = {
         .setTitle(`${user.username}'s avatar`).setImage(user.displayAvatarURL().slice(0, -3) + 'gif?quality=lossless&size=1024')
 
         .setColor("#000")
-      await interaction.reply({ embeds: [fl] })
+      return interaction.reply({ embeds: [fl] })
     }
     if (user.displayAvatarURL().endsWith(".webp") == true) {
 
@@ -26,7 +26,7 @@ module.exports = {
         .setTitle(`${user.username}'s avatar`).setImage(user.displayAvatarURL().slice(0, -4) + 'png?quality=lossless&size=1024')
 
         .setColor("#000")
-      await interaction.reply({ embeds: [MEmbedTrue] })
+      return interaction.reply({ embeds: [MEmbedTrue] })
     }
     console.log('[LOG] | "avatar.js" was used')
 
