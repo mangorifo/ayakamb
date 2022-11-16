@@ -20,12 +20,13 @@ module.exports = {
           .setLabel('Send me another one')
           .setStyle(ButtonStyle.Secondary),
       );
-
+    if (squery) {
     if (isc.includes(squery)) { 
       return interaction.reply(`https://http.cat/${squery}`);
     }
     if (!isc.includes(squery)) { 
       return interaction.reply(`That error code does not exist. (${squery})`);
+      }
     }
     if (!squery) {
     const catgenerator = img[Math.floor(Math.random() * img.length)];
