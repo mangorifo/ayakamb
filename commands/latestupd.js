@@ -14,9 +14,9 @@ module.exports = {
     const web = new ActionRowBuilder()
       .addComponents(
         new ButtonBuilder()
-          .setLabel('AyakaMB bot website')
+          .setLabel('Web Changelog')
           .setStyle(ButtonStyle.Link)
-          .setURL('https://discord.ayakads.cf'),
+          .setURL('https://discord.ayakads.cf/changelog'),
       );
     const messageEmbed = new EmbedBuilder()
       .setColor(`00FF00`)
