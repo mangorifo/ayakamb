@@ -22,7 +22,7 @@ module.exports = {
       .setColor(`00FF00`)
       .setTitle(`Changelog`)
       .setAuthor({ name: 'latest update of AyakaMB' })
-      .setDescription(`*new commands*\n\nAdd /say command`)
+      .setDescription(`*new commands*\n\nAdd /httpcat command`)
       .setFooter({ text: `If commands aren't listed here, that means they're not done/in beta/still testing/not much of a change` })
     await interaction.reply({ embeds: [messageEmbed], components: [row, web] });
 
