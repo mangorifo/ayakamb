@@ -27,6 +27,7 @@ module.exports = {
     if (!isc.includes(squery)) { 
       return interaction.reply(`That error code does not exist. (${squery})`);
     }
+    if (!squery) {
     const catgenerator = img[Math.floor(Math.random() * img.length)];
     const cat1 = new EmbedBuilder()
       .setTitle(`HTTP Cat`)
@@ -47,5 +48,6 @@ module.exports = {
         .setImage(catgenerator2)
       return i.update({ embeds: [cat2], components: [row] })
     });
+    }
   }
 }
