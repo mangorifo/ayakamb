@@ -16,7 +16,7 @@ module.exports = {
     const cat1 = new EmbedBuilder()
       .setTitle(`HTTP Cat`)
       .setURL('https://http.cat')
-      .setDescription(catgenerator)
+      .setImage(catgenerator)
     console.log('[LOG] | "httpcat.js" was used')
 
     await interaction.reply({ embeds: [cat1], components: [row] })
@@ -29,7 +29,7 @@ module.exports = {
       const cat2 = new EmbedBuilder()
         .setTitle(`HTTP Cat`)
         .setURL('https://http.cat')
-        .setDescription(catgenerator2)
+        .setImage(catgenerator2)
       return i.update({ embeds: [cat2], components: [row] })
     });
   }

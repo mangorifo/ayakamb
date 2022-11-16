@@ -27,6 +27,7 @@ module.exports = {
           { name: '/skillissuegif', value: 'skill' },
           { name: 'Marking', value: 'marks' },
           { name: '/say', value: 'say'},
+          { name: '/httpcat', value: 'catht'},
         )),
   async execute(interaction) {
     const cmd = interaction.options.getString('commandname');
@@ -97,6 +98,9 @@ module.exports = {
     else if (interaction.options.getString('commandname') == 'say') {
       return interaction.reply('/say:\nsay text you specify')
     }
+    if (interaction.options.getString('commandname') == 'catht') {
+      return interaction.reply('/httpcat:\nsends a random photo of a cat but as a http error code. from [http.cat](https://http.cat)')
+    }
     const CommandWebAyakaList = new ActionRowBuilder()
       .addComponents(
         new ButtonBuilder()
@@ -109,7 +113,7 @@ module.exports = {
       .setTitle(`All commands`)
       .setAuthor({ name: 'help command' })
       .setURL('https://discord.ayakads.cf/commands')
-      .setDescription(`**Fun, utilities**\n**/avatar**:\nsends an avatar url of your avatar or the specified user\n**/ban**:\nbans a user\n**/deadchat**:\nsends a "dead chat" gif\n**/help**:\nshows this embed\n**/howemo**:\nmakes the bot guess how emotional you are\n**/howgay**:\nmakes the bot guess how gay you are\n**/howsus**:\nmakes the bot guess how sus you are\n**/howhorny**:\n:skull: (makes the bot guess how horny you are)\n**/kick**:\nkicks a user\n**/ping**:\nchecks the bot latency\n**/randomip**:\nsends a random IP address\n**/server**:\nsends information about the server\n**/sus**:\nsends a "sus" gif\n**/timeout**:\ntimes out a user\n**/unban:**\nunbans a user\n**/user**:\nsends info about you\n**/hug**:\nhug someone!\n**/kiss**:\nkiss someone...\n**/say**:\nrepeats the text you specify.\n**/how skillissue**\nSkill issue fr\n**/skillissuegif**:\nSkill issues\n**/mark** commands:\nUse "/help commandname: Marking" to get help for this\n\n**Others**\n\n**/ayakavoiceline**:\nsends a random voiceline of Ayaka from the game "Genshin Impact"\n**/hutaovoiceline**:\nsends a random voiceline of Hu Tao from "Genshin Impact"`)
+      .setDescription(`**Fun, utilities**\n**/avatar**:\nsends an avatar url of your avatar or the specified user\n**/ban**:\nbans a user\n**/deadchat**:\nsends a "dead chat" gif\n**/help**:\nshows this embed\n**/howemo**:\nmakes the bot guess how emotional you are\n**/howgay**:\nmakes the bot guess how gay you are\n**/howsus**:\nmakes the bot guess how sus you are\n**/howhorny**:\n:skull: (makes the bot guess how horny you are)\n**/kick**:\nkicks a user\n**/ping**:\nchecks the bot latency\n**/randomip**:\nsends a random IP address\n**/server**:\nsends information about the server\n**/sus**:\nsends a "sus" gif\n**/timeout**:\ntimes out a user\n**/unban:**\nunbans a user\n**/user**:\nsends info about you\n**/hug**:\nhug someone!\n**/kiss**:\nkiss someone...\n**/say**:\nrepeats the text you specify.\n**/how skillissue**\nSkill issue fr\n**/skillissuegif**:\nSkill issues\n**/mark** commands:\nUse "/help commandname: Marking" to get help for this\n**/httpcat**:\nsends a random photo of a cat but as a http error code. from [http.cat](https://http.cat)\n**/say**:\nRepeats what you say.\n**Others**\n\n**/ayakavoiceline**:\nsends a random voiceline of Ayaka from the game "Genshin Impact"\n**/hutaovoiceline**:\nsends a random voiceline of Hu Tao from "Genshin Impact"`)
       .setFooter({ text: `Requested by ${interaction.user.username}`, iconURL: interaction.user.displayAvatarURL() })
     return interaction.reply({ embeds: [messageEmbed], ephemeral: true, components: [CommandWebAyakaList] });
   },
