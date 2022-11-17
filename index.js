@@ -32,7 +32,7 @@ client.on(Events.InteractionCreate, async interaction => {
   } catch (error) {
     console.error(error);
 
-    await interaction.reply({ content: "omg bot has code issue?", ephemeral: true });
+    await interaction.reply({ content: "The bot has encountered an error. Report this error at the bot's [bug report page](https://discord.ayakads.cf/submit-bug/).\n\n**More info about the error:**\n" + error, ephemeral: true });
   }
 })
 // events handler
