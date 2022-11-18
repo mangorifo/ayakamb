@@ -10,10 +10,11 @@ module.exports = {
         new ButtonBuilder()
           .setCustomId('ayaka')
           .setLabel('Send me another one')
-          .setStyle(ButtonStyle.Secondary),
+          .setStyle(ButtonStyle.Success),
       );
     const voiceline = vayakal[Math.floor(Math.random() * vayakal.length)];
     const VoicelineEmbed = new EmbedBuilder()
+      .setColor("#324ea8")
       .setAuthor({ name: `Kamisato Ayaka` })
       .setDescription(voiceline)
     console.log('[LOG] | "ayakavl.js" was used')
@@ -26,6 +27,7 @@ module.exports = {
     collector.on('collect', async i => {
       const vl2 = vayakal[Math.floor(Math.random() * vayakal.length)];
       const VLE = new EmbedBuilder()
+        .setColor("#324ea8")
         .setAuthor({ name: `Kamisato Ayaka` })
         .setDescription(vl2)
       return i.update({ embeds: [VLE], components: [row] })

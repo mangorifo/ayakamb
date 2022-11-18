@@ -95,6 +95,7 @@ module.exports = {
     console.log('[LOG] | "hutaovl.js" was used')
     const voiceline = vl[Math.floor(Math.random() * vl.length)];
     const VoicelineEmbed = new EmbedBuilder()
+      .setColor("#a83d36")
       .setAuthor({ name: `Hu Tao` })
       .setDescription(voiceline)
     await interaction.reply({ embeds: [VoicelineEmbed], components: [row] });
@@ -105,6 +106,7 @@ module.exports = {
     collector.on('collect', async i => {
       const vl2 = vl[Math.floor(Math.random() * vl.length)];
       const VLE = new EmbedBuilder()
+        .setColor("#a83d36")
         .setAuthor({ name: `Hu Tao` })
         .setDescription(vl2)
       return i.update({ embeds: [VLE], components: [row] })
