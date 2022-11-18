@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Collection, Events, GatewayIntentBits, ActivityType } = require('discord.js');
+const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.commands = new Collection();
@@ -12,29 +12,7 @@ for (const file of commandFiles) {
   client.commands.set(command.data.name, command);
 }
 
-client.once(Events.ClientReady, () => {
-  console.log('[CLIENT] index.js | Client is ready.');
-  console.log(`[CLIENT] index.js | Logging in...`)
-  console.log(`[CLIENT] index.js | Logged in as ${client.user.tag}!`)
 
-})
-
-
-client.on(Events.InteractionCreate, async interaction => {
-  if (!interaction.isChatInputCommand()) return;
-
-  const command = client.commands.get(interaction.commandName);
-
-  if (!command) return;
-
-  try {
-    await command.execute(interaction);
-  } catch (error) {
-    console.error(error);
-
-    await interaction.reply({ content: "The bot has encountered an error. Report this error at the bot's [bug report page](https://discord.ayakads.cf/submit-bug/).\n\n**More info about the error:**\n" + error, ephemeral: true });
-  }
-})
 // events handler
 const eventsPath = path.join(__dirname, "client/events");
 const eventFiles = fs
@@ -50,5 +28,4 @@ for (const file of eventFiles) {
     client.on(event.name, (...args) => event.execute(...args));
   }
 }
-client.login(process.env.token);
-// login with token environment variable
+console.log("[CLIENT] index | Attempted to load all events.")

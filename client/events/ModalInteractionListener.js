@@ -4,3 +4,4 @@ client.on(Events.InteractionCreate, interaction => {
 	if (!interaction.isModalSubmit()) return;
 	console.log(interaction);
 });
+console.log("[EVENTS] ModalInteractionListener | Loaded modal interaction listener")

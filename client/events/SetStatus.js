@@ -15,4 +15,4 @@ module.exports = {
     });
   },
 };
-console.log('[EVENTS] statuses.js | loaded statuses event')
+console.log('[EVENTS] SetStatus | Activity (status) ready')
