@@ -26,8 +26,8 @@ module.exports = {
     const collector = interaction.channel.createMessageComponentCollector({ filter });
 
     collector.on('collect', async i => {
-    const g2 = await request('https://discord.ayakads.cf/api/bot/avoi');
-    const { response } = await g2.body.json();
+      const g2 = await request('https://discord.ayakads.cf/api/bot/avoi');
+      const { response } = await g2.body.json();
       const VLE = new EmbedBuilder()
         .setColor("#324ea8")
         .setAuthor({ name: `Kamisato Ayaka` })
