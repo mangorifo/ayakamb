@@ -20,7 +20,12 @@ module.exports = {
     ]
     const huggif = [
       "https://media.tenor.com/J7eGDvGeP9IAAAAC/enage-kiss-anime-hug.gif",
-      "https://media.tenor.com/kCZjTqCKiggAAAAC/hug.gif", "https://media.tenor.com/8o4fWGwBY1EAAAAd/aharensan-aharen.gif", "https://media.tenor.com/8BqG6yTLCLEAAAAC/anime.gif",
+      "https://media.tenor.com/kCZjTqCKiggAAAAC/hug.gif",
+      "https://media.tenor.com/8o4fWGwBY1EAAAAd/aharensan-aharen.gif",
+      "https://media.tenor.com/8BqG6yTLCLEAAAAC/anime.gif",
+      "https://media.tenor.com/PEEVUgby2p0AAAAd/anime-anime-hug.gif",
+      "https://media.tenor.com/rTKIBe2qtxsAAAAC/anime-couples.gif",
+      "https://media.tenor.com/FJRptuv4oX8AAAAC/hug-k-on.gif"
     ]
 
     const hgm2 = hugmsg[Math.floor(Math.random() * hugmsg.length)];

@@ -11,11 +11,25 @@ for (const file of commandFiles) {
   const command = require(filePath);
   client.commands.set(command.data.name, command);
 }
+// events handler
+const eventsPath = path.join(__dirname, "client/events");
+const eventFiles = fs
+  .readdirSync(eventsPath)
+  .filter((file) => file.endsWith(".js"));
 
-client.once(Events.ClientReady, () => {
-  console.log(`[CLIENT] index | Logged in as ${client.user.tag}!`)
-
-})
+for (const file of eventFiles) {
+  const filePath = path.join(eventsPath, file);
+  const event = require(filePath);
+  if (event.once) {
+    client.once(event.name, (...args) => event.execute(...args));
+  } else {
+    client.on(event.name, (...args) => event.execute(...args));
+  }
+}
+  console.log('[NOTIFY] index | The bot might not be logged in if there is no message below this. ' + client?.user?.username)
+  client.once(Events.ClientReady, () => {
+    console.log(`[CLIENT] index | Logged in as ${client.user.tag}! (${client.user.username}, ${client.user.id})`)
+  })
 
 
 client.on(Events.InteractionCreate, async interaction => {
@@ -33,20 +47,6 @@ client.on(Events.InteractionCreate, async interaction => {
     return interaction.reply({ content: "The bot has encountered an error. Report this error at the bot's [bug report page](https://discord.ayakads.cf/submit-bug/).\n\n**More info about the error:**\n" + error, ephemeral: true });
   }
 })
-// events handler
-const eventsPath = path.join(__dirname, "client/events");
-const eventFiles = fs
-  .readdirSync(eventsPath)
-  .filter((file) => file.endsWith(".js"));
 
-for (const file of eventFiles) {
-  const filePath = path.join(eventsPath, file);
-  const event = require(filePath);
-  if (event.once) {
-    client.once(event.name, (...args) => event.execute(...args));
-  } else {
-    client.on(event.name, (...args) => event.execute(...args));
-  }
-}
 client.login(process.env.token);
 // login with token environment variable

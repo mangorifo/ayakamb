@@ -36,9 +36,16 @@ module.exports = {
               )
         .addSubcommand(subcommand =>
           subcommand
+             .setName('bigispp')
+             .setDescription('how big is pp.')
+             .addUserOption((option) =>
+                option.setName("user").setDescription("hm").setRequired(false))
+              )
+        .addSubcommand(subcommand =>
+          subcommand
             .setName('emo')
             .setDescription('emotional')
-           .  addUserOption((option) =>
+            .addUserOption((option) =>
               option.setName("user").setDescription("hm").setRequired(false))
             ),
       async execute(interaction) {
@@ -46,10 +53,6 @@ module.exports = {
       const user = interaction.options.getMember("user") || interaction.user
     if(interaction.options.getSubcommand() === 'gay') {
   const gaycount = [Math.floor(Math.random() * 101)];
-  const gay1 = new EmbedBuilder()
-    .setColor(`e4b400`)
-    .setTitle(`how gay command`)
-    .setDescription(`<@${interaction.user.id}> is ${gaycount}% gay <a:senti:1031904003866509382>`)
   const gay2 = new EmbedBuilder()
     .setColor(`e4b400`)
     .setTitle(`how gay command`)
@@ -147,14 +150,32 @@ if (interaction.options.getSubcommand() === 'horny') {
       const maxemo = new EmbedBuilder()
         .setColor(`FF0000`)
         .setTitle(`The bot has encountered an error...`)
-        .setDescription(`MAX_SAFE_INTEGER has exceeded\n\n**More details:**\nCould not get constant "emoc" for ${user}`)
+        .setDescription(`MAX_SAFE_INTEGER has exceeded\n\n**More details:**\nCould not get constant "emoc" for ${user} (Expected 101%<, got 10000000000000000000000000%)`)
       console.log('[LOG] | "howemo.js" was used')
   
-      if (user.id === idcounthigh) {
+      if (user.id === "860381903991734282" || interaction.user.id === "860381903991734282") {
         return interaction.reply({ embeds: [maxemo] })
       }
   
       return interaction.reply({ embeds: [emo2] })
+    } if (interaction.options.getSubcommand() === "bigispp") {
+      const sizes = [
+        "8=D",
+        "8==D",
+        "8===D",
+        "8====D",
+        "8=====D",
+        "8======D",
+        "8=======D",
+        "8========D",
+      ]
+      const pp = sizes[Math.floor(Math.random() * sizes.length)];
+      const pps = new EmbedBuilder()
+        .setColor(`00FF00`)
+        .setTitle(`PP SIZE`)
+        .setDescription(`${user}'s pp: ${pp} <a:senti:1031904003866509382>`)
+  
+      return interaction.reply({ embeds: [pps] })
     }
   },
 };

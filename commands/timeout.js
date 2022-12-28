@@ -24,6 +24,7 @@ module.exports = {
         .setDescription("why u timed them out")
         .setRequired(false)
     )
+    .setDMPermission(false)
     .setDefaultMemberPermissions(PermissionFlagsBits.ModerateMembers),
   async execute(interaction) {
     console.log('[LOG] | "timeout.js" was used')

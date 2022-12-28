@@ -13,6 +13,7 @@ module.exports = {
         .setDescription("who to kick")
         .setRequired(true)
     )
+    .setDMPermission(false)
     .addStringOption((option) =>
       option
         .setName("reason")

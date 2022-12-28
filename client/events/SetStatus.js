@@ -7,8 +7,8 @@ module.exports = {
     client.user.setPresence({
       activities: [
         {
-          name: `with you`,
-          ActivityType: "playing",
+          name: `you`,
+          type: ActivityType.Listening,
         },
       ],
       status: "idle",

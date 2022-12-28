@@ -15,6 +15,7 @@ module.exports = {
         .setDescription("why you banned tehm")
         .setRequired(true)
     )
+    .setDMPermission(false)
     .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers),
   async execute(interaction) {
     console.log('[LOG] | "ban.js" was used')

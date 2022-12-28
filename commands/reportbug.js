@@ -53,8 +53,7 @@ module.exports = {
         components: [confirm],
         ephemeral: true
       })
-    }
-    else {
+    } else {
       const wembed = new EmbedBuilder()
         .setTitle('New bug report: ' + title)
         .setDescription(desc)
@@ -65,12 +64,7 @@ module.exports = {
         .setDescription('Would you like to sent this bug report? (Dismiss the message to cancel)\n\n' + desc)
         .setColor('#E4B400')
         .setFooter({ text: `Sent by ${i.user.tag}, sent from /bugreport command (not from website)`, iconURL: i.user.displayAvatarURL() })
-      await i.reply({
-        embeds: [confembed],
-        ephemeral: true,
-        components: [confirm]
-      })
-      return confirmcollector.on('collect', async i => {
+      confirmcollector.on('collect', async i => {
         await i.reply({
           content: 'Sent bug report.',
           ephemeral: true
@@ -79,6 +73,11 @@ module.exports = {
           embeds: [wembed],
         });
         return confirmcollector.stop();
+      })
+      return i.reply({
+        embeds: [confembed],
+        ephemeral: true,
+        components: [confirm]
       })
     }
   }
