@@ -1,11 +1,14 @@
-const { REST, Routes } = require('discord.js');
-const { clientId, guildId, token } = require('./config.json');
-const fs = require('node:fs');
 
+const {REST, Routes} = require('discord.js');
+const {clientId, guildId, token} = require('./config.json');
+const fs = require('node:fs');
+require('dotenv').config();
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+// eslint-disable-next-line max-len
+const commandFiles = fs.readdirSync('./commands').filter((file) => file.endsWith('.js'));
 
+// eslint-disable-next-line max-len
 // Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
@@ -13,19 +16,22 @@ for (const file of commandFiles) {
 }
 
 // Construct and prepare an instance of the REST module
-const rest = new REST({ version: '10' }).setToken(process.env.token);
+const rest = new REST({version: '10'}).setToken(process.env.token);
 
 // and deploy your commands!
 (async () => {
   try {
+    // eslint-disable-next-line max-len
     console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
+    /* eslint-disable-next-line max-len */
     // The put method is used to fully refresh all commands in the guild with the current set
     const data = await rest.put(
-      Routes.applicationCommands(clientId),
-      { body: commands },
+        Routes.applicationCommands(clientId),
+        {body: commands},
     );
 
+    // eslint-disable-next-line max-len
     console.log(`Successfully reloaded ${data.length} application (/) commands.`);
   } catch (error) {
     // And of course, make sure you catch and log any errors!

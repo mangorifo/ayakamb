@@ -32,10 +32,10 @@ module.exports = {
         ephemeral: true,
       });
 
-    const userPosition = await user.roles.highest.position;
-    const botPosition = await interaction.guild.members.me.roles.highest
+    const userPosition = user.roles.highest.position;
+    const botPosition = interaction.guild.members.me.roles.highest
       .position;
-    const mePosition = await interaction.member.roles.highest.position;
+    const mePosition = interaction.member.roles.highest.position;
 
     if (
       !interaction.guild.members.me.permissions.has(
