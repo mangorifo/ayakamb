@@ -38,8 +38,7 @@ module.exports = {
         return interaction.reply({ embeds: [mc1] });
       }
       if (!isc.includes(squery)) {
-        await interaction.reply(`That error code does not exist. (${squery})`);
-        return interaction.followUp('https://http.cat/404.jpg')
+        return interaction.reply(`That error code does not exist. (${squery})`);
       }
     }
     if (interaction.options.getString("listall") == "true") {

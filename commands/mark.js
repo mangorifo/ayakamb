@@ -1,4 +1,4 @@
-const {SlashCommandBuilder, EmbedBuilder} = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const nSchemaMsgMark = require('./models/keys');
 const Schema = require('./models/keys');
 module.exports = {
@@ -71,7 +71,7 @@ module.exports = {
                     const MsgEmbed = new EmbedBuilder()
                         .setColor('#e4b400')
                         .setTitle(`Marked information for ${user.username || interaction.guild.user.nickname}`)
-                        .setDescription(`${user.username}'s latest marked info is:\n\nMarked on Guild: (ID) ${data['keymadeog']} (Guild name: ${data['GuildName']})\nMarked on Channel: (ID) ${data['channel']}\nKey Owner: ${data['Name']} (written username: "${data['UserName']}")\nMarked at: <t:${data['StoredAt']}:F>\nKey ID: ${data['StoreId']}`)
+                        .setDescription(`${user.username}'s latest marked info is:\n\nMarked on Guild: (ID) ${data['keymadeog']} (Guild name: ${data['GuildName']})\nMarked on Channel: (ID) ${data['channel']}\nKey Owner: ${data['Name']} (written username: "${data['UserName']}")\nMarked at: <t:${data['StoredAt']}:F> (<t:${data['StoredAt']}:R>)\nKey ID: ${data['StoreId']}`)
                         .setImage(data['AvatarImg'])
                         .setFooter({text: `Requested by ${interaction.user.username || interaction.guild.user.nickname}`, iconURL: interaction.user.displayAvatarURL()});
                     return interaction.reply({embeds: [MsgEmbed]});
